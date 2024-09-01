@@ -2,7 +2,51 @@
 
 @section('content')
 
-   
+
+<style>
+    /* Add a simple fade-in effect */
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+    
+
+    /* Flip animation for the icon */
+    @keyframes flipOnce {
+        0% {
+            transform: rotateY(270deg);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+
+    .animate-flip-once {
+        animation: flipOnce 1s linear 1;
+    }
+
+     /* Text grow animation */
+    @keyframes growText {
+        0% {
+            transform: scale(0.75);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .animate-grow-text {
+        animation: growText 1s ease-out forwards;
+    }
+</style>
 <div class="w-full max-w-7xl text-gray-800 p-8 rounded-lg shadow-lg mx-auto my-4 fade-in bg-white border border-green-400 shadow-lg text-green-700 p-6 rounded-xl max-w-lg text-center space-y-2">
         <!-- Icon -->
         <div class="inline-flex items-center justify-center h-24 w-24 rounded-full border-8 border-green-500 animate-flip-once">

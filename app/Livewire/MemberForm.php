@@ -287,6 +287,8 @@ class MemberForm extends Component implements HasForms
 
         // Reset the form fields
         $this->form->fill([]);
+
+        return redirect('registration-success');
     }
 
 

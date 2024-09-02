@@ -25,15 +25,15 @@ class MemberForm extends Component implements HasForms
     public $avatar = '';
     public $image;
     public $dob;
-    public $father_name;
-    public $residential_address;
-    public $office_address;
-    public $resident_phone;
-    public $office_phone;
+    public $father_name = '';
+    public $residential_address = '';
+    public $office_address = '';
+    public $resident_phone = '';
+    public $office_phone = '';
     public $mobile;
     public $gotra;
-    public $aspad;
-    public $blood_group;
+    public $aspad = '';
+    public $blood_group = '';
 
     public $other_members = [];
 
@@ -258,11 +258,11 @@ class MemberForm extends Component implements HasForms
             'other_members.*.full_name' => 'required|string|max:255',
             'other_members.*.relation' => 'required|string',
             'other_members.*.maritial_status' => 'required|string',
-            'other_members.*.education_qualification' => 'string',
-            'other_members.*.dob' => 'string',
-            'other_members.*.occupation' => 'string',
-            'other_members.*.blood_group' => 'string',
-            'other_members.*.other' => 'string',
+            // 'other_members.*.education_qualification' => 'string',
+            // 'other_members.*.dob' => 'string',
+            // 'other_members.*.occupation' => 'string',
+            // 'other_members.*.blood_group' => 'string',
+            // 'other_members.*.other' => 'string',
             // Add validation for other fields in repeater
         ], [
             'first_name.unique' => "ऐसा लगता है कि आप पहले से ही पंजीकृत हैं: समान प्रथम नाम, अंतिम नाम और जन्म तिथि वाला एक सदस्य पहले से मौजूद है, कृपया अधिक जानकारी के लिए व्यवस्थापक से संपर्क करें।\n Looks like you\'re already registered: A member with the same first name, last name, and date of birth already exists, please contact admin for more details .",

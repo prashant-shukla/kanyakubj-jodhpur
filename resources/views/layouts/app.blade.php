@@ -14,7 +14,7 @@
     @filamentStyles
 
     <link
-        href="http://localhost:8000/css/filament/filament/app.css"
+        href="{{ env('APP_URL') }}/css/filament/filament/app.css"
         rel="stylesheet"
         data-navigate-track
     />

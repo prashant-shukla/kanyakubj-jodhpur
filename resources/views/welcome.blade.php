@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="">
         @livewire('member-form')
         {{-- <livewire:member-form /> --}}
     </div>

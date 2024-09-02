@@ -31,11 +31,12 @@
                 <h1 class="text-6xl font-extrabold text-white bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent py-4 tracking-wide uppercase shadow-lg">
                     कान्यकुब्ज ब्राह्मण समाज, जोधपुर 
                 </h1>
+                <hr />
 
                 <h2 class="text-2xl font-semibold text-gray-100 bg-gradient-to-r from-green-300 via-blue-400 to-purple-500 bg-clip-text text-transparent mt-4 tracking-wide">
                     सदस्यता आवेदन पत्र 
                 </h2>
-                <hr /><br />
+                <br />
             </div>
 
             <div class="dark bg-gray-800 rounded-lg">

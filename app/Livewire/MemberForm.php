@@ -22,7 +22,7 @@ class MemberForm extends Component implements HasForms
 
     public $first_name;
     public $last_name;
-    public $avatar;
+    public $avatar = '';
     public $image;
     public $dob;
     public $father_name;
@@ -68,7 +68,11 @@ class MemberForm extends Component implements HasForms
                             Forms\Components\TextInput::make('last_name')
                                 ->label('उपनाम / Last Name')
                                 ->required(),
-                            Forms\Components\TextInput::make('avatar')->hidden(), 
+                            Forms\Components\TextInput::make('avatar')
+                                // ->default('N/A')
+                                ->visible(false)
+                                ->disabled()
+                                , 
                             FileUpload::make('image')
                                 ->label('प्रोफाइल फोटो / Profile Photo')
                                 ->image()
@@ -219,9 +223,8 @@ class MemberForm extends Component implements HasForms
 
     public function uploadImage(TemporaryUploadedFile $file)
     {
-        // $set = new Closure;
-        // $set('avatar', $file->store('profile'));
         $this->avatar = $file->store('profile');
+        return true;
     }
 
 
@@ -266,6 +269,8 @@ class MemberForm extends Component implements HasForms
             // Add other custom messages here as needed
         ]);
 
+        // dd($validatedData);
+
         Member::create([
             'first_name' => $validatedData['first_name'],
             'last_name' => $validatedData['last_name'],
@@ -283,10 +288,9 @@ class MemberForm extends Component implements HasForms
             'other_members' => $validatedData['other_members'],
         ]);
 
-        session()->flash('message', 'Member successfully registered.');
-
+        // session()->flash('message', 'Member successfully registered.');
         // Reset the form fields
-        $this->form->fill([]);
+        // $this->form->fill([]);
 
         return redirect('registration-success');
     }

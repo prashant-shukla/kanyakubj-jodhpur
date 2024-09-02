@@ -22,12 +22,12 @@
 
 </head>
 <body style="background: #FF671F;" >
-    <div class="container">
+    <div class="">
         @yield('content')
     </div>
 
-    {{-- @livewireScripts --}}
-    {{-- @filamentScripts --}}
+    @livewireScripts
+    @filamentScripts
 
 </body>
 </html>

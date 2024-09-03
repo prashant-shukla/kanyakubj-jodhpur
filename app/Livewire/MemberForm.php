@@ -76,6 +76,8 @@ class MemberForm extends Component implements HasForms
                             FileUpload::make('image')
                                 ->label('प्रोफाइल फोटो / Profile Photo')
                                 ->image()
+                                ->maxSize(2048) // Limit the file size to 2MB
+                                ->hint('Maximum file size: 2MB')
                                 ->imageEditor()
                                 ->reactive()
                                 ->afterStateUpdated(fn ($state) => $this->uploadImage($state)), 
@@ -165,6 +167,12 @@ class MemberForm extends Component implements HasForms
                                             'son' => 'पुत्र / Son',
                                             'daughter' => 'पुत्री / Daughter',
                                             'spouse' => 'जीवनसाथी / Spouse',
+
+                                            'brother' => 'भाई / Brother',
+                                            'sister' => 'बहन / Sister',
+                                            'grandson' => 'पोता / Grand Son',
+                                            'granddaughter' => 'पोती / Grand Daughter',
+                                            'daughterinlaw' => 'बहू / Daughter in law',
                                             // Add more relations as needed
                                         ])
                                         ->required(),
@@ -223,7 +231,7 @@ class MemberForm extends Component implements HasForms
 
     public function uploadImage(TemporaryUploadedFile $file)
     {
-        $this->avatar = $file->store('profile');
+        $this->avatar = $file->store('public/uploads/profile_images');
         return true;
     }
 

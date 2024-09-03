@@ -10,6 +10,10 @@ use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Validation\Rule;
+use Filament\Forms\Components\FileUpload;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Filament\Tables\Columns\ImageColumn;
+
 
 class MemberResource extends Resource
 {
@@ -22,44 +26,53 @@ class MemberResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('first_name')
-                    ->label('First Name')
-                    ->required()
-                    ->unique(function () {
-                        return Rule::unique('members', 'first_name')
-                            ->where('last_name', request()->input('last_name'))
-                            ->where('dob', request()->input('dob'));
-                    }),
-                
+                    ->label('प्रथम नाम / First Name')
+                    ->required(),
                 Forms\Components\TextInput::make('last_name')
-                    ->label('Last Name')
+                    ->label('उपनाम / Last Name')
                     ->required(),
+                Forms\Components\TextInput::make('avatar')
+                    // ->default('N/A')
+                    ->visible(false)
+                    ->disabled()
+                    , 
+                FileUpload::make('avatar')
+                    ->label('प्रोफाइल फोटो / Profile Photo')
+                    ->directory('uploads/profile_images') // Set the directory where files will be uploaded
+                    ->image()
+                    ->maxSize(2048) // Limit the file size to 2MB
+                    ->hint('Maximum file size: 2MB')
+                    // ->imageEditor()
+                    // ->reactive()
+                    ->columnSpan('full') // Use 'full' to make it span across all available columns
 
+                    ,
+                    // ->afterStateUpdated(fn ($state) => $this->uploadImage($state)), 
+                    // ->storeFileNamesIn('avatar'), 
                 Forms\Components\DatePicker::make('dob')
-                    ->label('Date of Birth')
+                    ->label('जन्मतिथि / Date of Birth')
                     ->required(),
-
                 Forms\Components\TextInput::make('father_name')
-                    ->label('Father\'s Name'),
-
+                    ->label('पिता का नाम / Father\'s Name')
+                    ->nullable(),
                 Forms\Components\Textarea::make('residential_address')
-                    ->label('Residential Address'),
-
+                    ->label('निवास पता / Residential Address')
+                    ->nullable(),
                 Forms\Components\Textarea::make('office_address')
-                    ->label('Office Address'),
-
+                    ->label('कार्यालय पता / Office Address')
+                    ->nullable(),
                 Forms\Components\TextInput::make('resident_phone')
-                    ->label('Resident Phone Number'),
-
+                    ->label('फोन नंबर (निवास) / Resident Phone')
+                    ->nullable(),
                 Forms\Components\TextInput::make('office_phone')
-                    ->label('Office Phone Number'),
-
+                    ->label('फोन नंबर (कार्यालय) / Office Phone')
+                    ->nullable(),
                 Forms\Components\TextInput::make('mobile')
-                    ->label('Mobile Number')
+                    ->label('मोबाइल नंबर / Mobile')
                     ->required()
-                    ->unique(ignoreRecord: true),
-
+                    ->unique(Member::class, 'mobile'),
                 Forms\Components\Select::make('gotra')
-                    ->label('Gotra')
+                    ->label('गोत्र / Gotra')
                     ->options([
                         'kashyap' => 'कश्यप / Kashyap', 
                         'bhardwaj' => 'भरद्वाज / Bhardwaj', 
@@ -80,12 +93,11 @@ class MemberResource extends Resource
                         // Add more gotras as needed
                     ])
                     ->required(),
-
                 Forms\Components\TextInput::make('aspad')
-                    ->label('Aspad'),
-
+                    ->label('अस्पद / Aspad')
+                    ->nullable(),
                 Forms\Components\Select::make('blood_group')
-                    ->label('Blood Group')
+                    ->label('ब्लड ग्रुप / Blood Group')
                     ->options([
                         'A+' => 'A+',
                         'A-' => 'A-',
@@ -97,44 +109,53 @@ class MemberResource extends Resource
                         'AB-' => 'AB-',
                     ]),
 
-                Forms\Components\Repeater::make('other_members')
-                    ->label('Other Members')
+                    Forms\Components\Repeater::make('other_members')
+                    ->addActionLabel('अधिक सदस्य जोड़ें / Add more members')
+                    ->label('सदस्य विवरण / Member Details')
                     ->schema([
                         Forms\Components\TextInput::make('full_name')
-                            ->label('Full Name')
+                            ->label('पूरा नाम / Full Name')
                             ->required(),
 
                         Forms\Components\Select::make('relation')
-                            ->label('Relation')
+                            ->label('मुखिया से संबंध / Relation with Head')
                             ->options([
-                                'father' => 'Father',
-                                'mother' => 'Mother',
-                                'son' => 'Son',
-                                'daughter' => 'Daughter',
-                                'spouse' => 'Spouse',
+                                'father' => 'पिता / Father',
+                                'mother' => 'माता / Mother',
+                                'son' => 'पुत्र / Son',
+                                'daughter' => 'पुत्री / Daughter',
+                                'spouse' => 'जीवनसाथी / Spouse',
+
+                                'brother' => 'भाई / Brother',
+                                'sister' => 'बहन / Sister',
+                                'grandson' => 'पोता / Grand Son',
+                                'granddaughter' => 'पोती / Grand Daughter',
+                                'daughterinlaw' => 'बहू / Daughter in law',
                                 // Add more relations as needed
                             ])
                             ->required(),
 
                         Forms\Components\TextInput::make('education_qualification')
-                            ->label('Education Qualification'),
+                            ->label('शैक्षणिक योग्यता / Education Qualification'),
 
                         Forms\Components\Select::make('maritial_status')
-                            ->label('Maritial Status')
+                            ->label('वैवाहिक स्थिति / Maritial Status')
                             ->options([
-                                'married' => 'Married',
-                                'unmarried' => 'Unmarried',
+                                'married' => 'विवाहित / Married',
+                                'unmarried' => 'अविवाहित / Unmarried',
+                                'divorced' => 'तलाकशुदा / Divorced',
+                                'widowed' => 'विधवा / विदुर / Widowed',  
                             ])
                             ->required(),
 
                         Forms\Components\DatePicker::make('dob')
-                            ->label('Date of Birth'),
+                            ->label('जन्मतिथि / Date of Birth'),
 
                         Forms\Components\TextInput::make('occupation')
-                            ->label('Occupation'),
+                            ->label('व्यवसाय / Occupation'),
 
                         Forms\Components\Select::make('blood_group')
-                            ->label('Blood Group')
+                            ->label('ब्लड ग्रुप / Blood Group')
                             ->options([
                                 'A+' => 'A+',
                                 'A-' => 'A-',
@@ -147,17 +168,34 @@ class MemberResource extends Resource
                             ]),
 
                         Forms\Components\Textarea::make('other')
-                            ->label('Other Details'),
+                            ->label('अन्य विवरण / Other Details'),
                     ])
-                    ->columns(1)
+                    ->columns(1) // Single column layout
+                    ->columnSpan('full') // Use 'full' to make it span across all available columns
                     ->collapsible(), // Makes the repeater collapsible
             ]);
     }
+
+    public function uploadImage(TemporaryUploadedFile $file)
+    {
+        $this->avatar = $file->store('profile');
+        return true;
+    }
+
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
+                ImageColumn::make('avatar')
+                    ->label('Profile Image')
+                    ->disk('public') // Use the appropriate disk, typically 'public' or 's3'
+                    // ->pathPrefix('storage/uploads/profile_images/') // Prefix the path to the image directory
+                    ->size(100, 100) // Set the size of the preview image
+                    // ->square()
+                    ->defaultImageUrl(url('https://placehold.jp/30/dd6699/ffffff/100x100.png?text=NO+IMAGE'))
+                    ->extraAttributes(['class' => 'inline-block']), 
+
                 TextColumn::make('first_name')
                     ->label('First Name'),
                 

@@ -10,6 +10,7 @@ use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Validation\Rule;
+
 use Filament\Forms\Components\FileUpload;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Filament\Tables\Columns\ImageColumn;
@@ -70,7 +71,9 @@ class MemberResource extends Resource
                 Forms\Components\TextInput::make('mobile')
                     ->label('मोबाइल नंबर / Mobile')
                     ->required()
-                    ->unique(Member::class, 'mobile'),
+                    ->unique(Member::class, 'mobile', fn ($record) => $record) // Automatically handles both create and edit modes
+                    // ->unique(Member::class, 'mobile')
+                    ,
                 Forms\Components\Select::make('gotra')
                     ->label('गोत्र / Gotra')
                     ->options([

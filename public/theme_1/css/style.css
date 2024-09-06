@@ -1,0 +1,624 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+/* Font for logo */
+.playfair-display-heading {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.roboto-body-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+/* Variables */
+:root {
+    --primaryColor: #FF671F;
+    /* This color can be used for primary buttons, calls to action, and key highlights. */
+    --textColor: #333333;
+    /* This color can be used for Text and headings. */
+    --backgroundColor: #F5F5F5;
+    /* This color can be used for Background */
+    --accentColor: #0062CC;
+    /* A bold blue color for secondary buttons or links */
+    --secondaryColor: #FFD700;
+    /* A golden yellow for highlights and hover effects) */
+    --subtleColor: #ECECEC;
+    /* For subtle sections */
+}
+
+#header .active {
+    color: var(--primaryColor) !important;
+}
+
+.nav-link:hover {
+    color: var(--secondaryColor) !important;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    color: var(--primaryColor) !important;
+}
+
+.carousel-caption{
+    background: #0000008a;
+}
+
+
+.btn-primary {
+    background-color: var(--primaryColor) !important;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondaryColor) !important;
+}
+
+.btn-secondary {
+    background-color: var(--accentColor) !important;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondaryColor) !important;
+}
+
+.footer-header {
+    background: #ff661f4f;
+}
+
+.footer-strip {
+    background-color: var(--primaryColor);
+    color: #FFFFFF;
+}
+
+.social-icon i {
+    font-size: 1.8rem;
+    /* Increase icon size */
+    transition: color 0.3s;
+    /* Smooth transition for color change */
+}
+
+.social-icon:hover i {
+    color: var(--secondaryColor);
+    /* Yellow color on hover */
+}
+
+.heading {
+    color: var(--primaryColor);
+}
+
+
+.carousel-inner .carousel-item img{
+    min-height:400px;   
+    object-fit:cover
+}
+
+.card {
+    background-color: #FFFFFF; /* White background for the card */
+}
+
+.widget>.card-title {
+    color: #FF671F; /* Main color for the title */
+}
+
+.sunrise, .sunset {
+    text-align: center;
+}
+
+.sunrise i, .sunset i {
+    color: #FF671F; /* Main color for icons */
+}
+
+.sunset i {
+    color: #FF5722; /* Sunset color for icons */
+}
+
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+}
+.image-wrapper>img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.about{
+    background-color: var(--subtleColor);
+}
+
+.quote-widget .card {
+    border-radius: 15px;
+}
+
+.quote-widget .blockquote-footer {
+    font-size: 1rem;
+}
+
+.quote-widget .card-body {
+    padding: 2rem;
+}
+
+.quote-widget i {
+    font-size: 1.25rem;
+}
+
+.quote-widget p {
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+.slick-track
+{
+    display: flex !important;
+}
+
+.slick-slide
+{
+    height: inherit !important;
+}
+
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+
+/* Button base styles */
+.button {
+    pointer-events: auto;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 1rem 3rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+}
+.button_header {
+    pointer-events: auto;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: .3rem 1rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+}
+
+/* Positioning and dimension for pseudo-elements */
+.button::before,.button_header::before,
+.button_header::after,
+.button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Pan button specific styles */
+.button--pan {
+    font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 700;
+    border: 2px solid var(--primaryColor); /* Border color set to var(--primaryColor) */
+    border-radius: 3rem;
+    overflow: hidden;
+    color: #fff; /* Text color set to white by default */
+}
+
+/* Span inside button */
+.button--pan span {
+    position: relative;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Before pseudo-element for hover effect */
+.button--pan::before {
+    content: '';
+    background: var(--primaryColor); /* Background color set to var(--primaryColor) */
+    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+/* Hover effect to pan up the button's background */
+.button--pan:hover::before {
+    transform: translate3d(0, -100%, 0);
+}
+
+/* Hover effect for text color */
+.button--pan:hover span {
+    color: var(--primaryColor); /* Text color changes to var(--primaryColor) on hover */
+}
+
+
+
+#donate-now{
+    background-color: var(--subtleColor);
+}
+
+
+
+/* about page */
+
+    .hero-section {
+        height: 40vh; /* Adjust height as needed */
+        background: url('../images/about-banner.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    .hero-section h1 {
+        font-size: 3rem; /* Adjust font size as needed */
+        margin: 0;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds shadow for better readability */
+    }
+    .hero-section-translucent {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      }
+
+    #missionSectionAbout{
+        background-color: var(--subtleColor);
+    }
+
+    .card-container {
+        max-width: 300px;
+      }
+      
+      .circular-icon {
+        width: 100px;
+        height: 100px;
+        border: 3px solid ;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      
+      .icon {
+        font-size: 32px;
+        color: #000;
+      }
+      
+      .line {
+        width: 2px;
+        height: 30px;
+        position: absolute;
+        top: 100px; /* Adjust based on circle height */
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        position: absolute;
+        top: 130px; /* Adjust based on line height */
+        left: 50%;
+        transform: translateX(-50%);
+      } 
+      
+      .card-mission .line, .card-mission .dot{
+        background-color: var(--primaryColor);
+      }
+      .card-mission .icon, .card-mission .circular-icon{
+        border-color: var(--primaryColor);
+        color: var(--primaryColor);
+      } 
+      .card-vision .line, .card-vision .dot{
+        background-color: #00d2ff
+      }
+      .card-vision .icon, .card-vision .circular-icon{
+        border-color: #00d2ff;
+        color: #00d2ff
+      } 
+      .card-values .line, .card-values .dot{
+        background-color: #d31859;
+      }
+      .card-values .icon, .card-values .circular-icon{
+        border-color: #d31859;
+        color: #d31859;
+      } 
+
+    .leadership-section {
+        margin: 3rem 0;
+    }
+    .leadership-section .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    .leadership-section .card {
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+    .leadership-section .card-body {
+        text-align: center;
+    }
+    .leadership-section h5 {
+        margin-top: 1rem;
+    }
+
+
+
+    .timeline_area {
+        background-color: var(--subtleColor);
+    }
+    .single-timeline-area {
+        position: relative;
+        z-index: 1;
+        padding-left: 180px;
+    }
+    @media only screen and (max-width: 575px) {
+        .single-timeline-area {
+            padding-left: 100px;
+        }
+    }
+    .single-timeline-area .timeline-date {
+        position: absolute;
+        width: 180px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -ms-grid-row-align: center;
+        align-items: center;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        padding-right: 60px;
+    }
+    @media only screen and (max-width: 575px) {
+        .single-timeline-area .timeline-date {
+            width: 100px;
+        }
+    }
+    .single-timeline-area .timeline-date::after {
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        content: "";
+        background-color: var(--primaryColor);
+        top: 0;
+        right: 30px;
+        z-index: 1;
+    }
+    .single-timeline-area .timeline-date::before {
+        position: absolute;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: var(--primaryColor);
+        content: "";
+        top: 50%;
+        right: 26px;
+        z-index: 5;
+        margin-top: -5.5px;
+    }
+    .single-timeline-area .timeline-date p {
+        margin-bottom: 0;
+        color: #020710;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .single-timeline-area .single-timeline-content {
+        position: relative;
+        z-index: 1;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+        box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+        border: 1px solid #ebebeb;
+        overflow: hidden;
+    }
+    .single-timeline-area .single-timeline-content .timeline-icon i {
+        color: #ffffff;
+        line-height: 30px;
+    }
+    .single-timeline-area .single-timeline-content .timeline-text h6 {
+        -webkit-transition-duration: 500ms;
+        transition-duration: 500ms;
+    }
+    .single-timeline-area .single-timeline-content .timeline-text p {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+    .single-timeline-area .single-timeline-content:hover .timeline-icon,
+    .single-timeline-area .single-timeline-content:focus .timeline-icon {
+        background-color: #020710;
+    }
+    .single-timeline-area .single-timeline-content:hover .timeline-text h6,
+    .single-timeline-area .single-timeline-content:focus .timeline-text h6 {
+        color: #3f43fd;
+    }
+    
+
+
+    .image-container {
+        width: 100%;
+        height: 300px; /* Adjust as needed */
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .img-fluid {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the container while maintaining its aspect ratio */
+    }
+    
+    .zoom-image {
+        cursor: pointer; /* Optional: Indicates that the image is clickable */
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .zoom-image:hover {
+        transform: scale(1.05); /* Optional: Slight zoom effect on hover */
+    }
+    
+
+
+    /* Remove all side borders for nav-links */
+    #tabs .custom-nav-tabs .nav-link {
+        border: none;
+        border-bottom: 3px solid transparent; /* Default no underline */
+        transition: border-bottom-color 0.3s ease; /* Smooth transition for the underline */
+    }
+
+    /* Add var(--primaryColor) underline to the active nav-link */
+    #tabs .custom-nav-tabs .nav-link.active {
+        border-bottom: 3px solid var(--primaryColor); /* var(--primaryColor) underline for active tab */
+    }
+    #tabs .custom-nav-tabs .nav-link.active>span{
+        color:var(--primaryColor); /* var(--primaryColor) underline for active tab */
+    }
+
+    #event_registration{
+        background-color: var(--subtleColor);
+    }
+    .form-control:focus , .form-select:focus {
+        border-color: var(--primaryColor); /* Orange border */
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 145, 0, 0.485); /* Orange shadow */
+    }
+    input[type="radio"]:checked{
+        background-color: var(--primaryColor);
+        border-color: var(--primaryColor);
+    }
+    input[type="radio"]:focus{
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 145, 0, 0.485); /* Orange shadow */
+    }
+
+
+      
+      .team-boxed p {
+        color:#7d8285;
+      }
+      
+      
+      .team-boxed .people {
+        padding:50px 0;
+      }
+      
+      .team-boxed .item {
+        text-align:center;
+      }
+      
+      .team-boxed .item .box {
+        text-align:center;
+        padding:30px;
+        background-color:#fff;
+        margin-bottom:30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        text-align: center;
+      }
+      
+      .team-boxed .item .name {
+        font-weight:bold;
+        margin-top:8px;
+        margin-bottom:8px;
+        color:inherit;
+      }
+      
+      .team-boxed .item .title {
+        text-transform:uppercase;
+        font-weight:bold;
+        color:#d0d0d0;
+        letter-spacing:2px;
+        font-size:13px;
+      }
+      
+      .team-boxed .item .description {
+        font-size:15px;
+        margin-top:15px;
+        margin-bottom:20px;
+      }
+      
+      .team-boxed .item img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      .team-boxed .social {
+        font-size:18px;
+        color:#a2a8ae;
+      }
+      
+      .team-boxed .social a {
+        color:inherit;
+        margin:0 10px;
+        display:inline-block;
+        opacity:0.7;
+      }
+      
+      .team-boxed .social a:hover {
+        color: var(--secondaryColor);
+      }
+
+      .gallery-img {
+        max-height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+      .gallery-img:hover {
+        transform: scale(1.1);
+      }
+
+
+    #tributeModal img{
+        width: 300px;
+    }
+
+    #Tribute_Form , #map{
+        background-color: var(--subtleColor);
+    }
+    .primary-color{
+        color: var(--primaryColor);
+    }
+    
+
+
+
+
+
+
+
+    

@@ -3,11 +3,18 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "dev:theme_1": "vite --config themes/theme_1/vite.config.js",
+        "build:theme_1": "vite build --config themes/theme_1/vite.config.js"
     },
     "devDependencies": {
         "axios": "^1.6.4",
+        "bootstrap": "^4.6.0",
+        "jquery": "^3.5",
         "laravel-vite-plugin": "^1.0",
+        "popper.js": "^1.16",
+        "sass": "^1.32.1",
+        "sass-loader": "^10.1.1",
         "vite": "^5.0"
     }
 }

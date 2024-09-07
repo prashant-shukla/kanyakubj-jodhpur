@@ -51,7 +51,7 @@
               <a class="nav-link @stack('gallery_active')" href="gallery">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link @stack('events_active')" href="achievers">Achievers</a>
+              <a class="nav-link @stack('achievers_active')" href="achievers">Achievers</a>
             </li>
             <li class="nav-item">
               <a class="nav-link @stack('tribute_active')" href="tribute">Tribute</a>

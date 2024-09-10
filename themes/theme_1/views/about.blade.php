@@ -157,41 +157,19 @@
     <div class="container">
       <h4 class="text-center mb-4 heading playfair-display-heading">Leadership History</h4>
       <div class="row">
-        <!-- Leader 1 -->
+        @foreach ($leaders as $leader)
         <div class="col-md-4 mb-4" data-aos="fade-right">
           <div class="card d-flex flex-column h-100">
-            <img src="{{asset("theme_1/images/leader-1.jpg")}}" class="card-img-top" alt="female Leader Photo">
+            <img src="{{ asset('storage/' . $leader->image) }}" class="card-img-top" alt="female Leader Photo">
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Anita Desai</h5>
-              <p class="text-muted">2005 - 2015</p> <!-- Time period below the card title -->
-              <p class="card-text flex-grow-1">A passionate advocate for women’s education, Anita Desai worked tirelessly to improve educational opportunities for young girls in rural areas.</p>
+              <h5 class="card-title">{{$leader->name}}</h5>
+              <p class="text-muted">{{$leader->years_served}}</p> <!-- Time period below the card title -->
+              <p class="card-text flex-grow-1">{{$leader->description}}</p>
             </div>
           </div>
         </div>
+        @endforeach
 
-        <!-- Leader 2 -->
-        <div class="col-md-4 mb-4" data-aos="fade-up">
-          <div class="card d-flex flex-column h-100">
-            <img src="{{asset("theme_1/images/leader-2.jpg")}}" class="card-img-top" alt="guru leader Photo">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Rajesh Kumar</h5>
-              <p class="text-muted">2015 - 2020</p> <!-- Time period below the card title -->
-              <p class="card-text flex-grow-1">An innovative social entrepreneur, Rajesh Kumar introduced sustainable farming practices and significantly boosted local agriculture in his community.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Leader 3 -->
-        <div class="col-md-4 mb-4" data-aos="zoom-in"> 
-          <div class="card d-flex flex-column h-100">
-            <img src="{{asset("theme_1/images/leader-3.jpg")}}" class="card-img-top" alt="male leader Photo">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Raja Patel</h5>
-              <p class="text-muted">2020 - Present</p> <!-- Time period below the card title -->
-              <p class="card-text flex-grow-1">A dedicated community organizer, Raja Patel has been instrumental in creating health awareness programs and improving public health services in underserved areas.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -217,126 +195,35 @@
             <div class="col-12">
                 <!-- Timeline Area -->
                 <div class="apland-timeline-area">
-                    <!-- Single Timeline Content -->
-                    <div class="single-timeline-area" data-aos="fade-up">
-                        <div class="timeline-date">
-                            <p>Near Future</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <div class="single-timeline-content row g-0 bg-white" data-aos="fade-right">
-                                    <div class="timeline-image col-4 p-0">
-                                        <img src="{{asset("theme_1/images/impact-1-1.jpg")}}" alt="Community Health Camp" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                                    </div>
-                                    <div class="timeline-text col-8 p-3">
-                                        <h6>Community Health Camp</h6>
-                                        <p>Our upcoming health camp aims to provide free medical check-ups and health education to rural communities across Uttar Pradesh.</p>
-                                    </div>
-                                </div>
+                    @foreach ($years as $year)
+                        <!-- Single Timeline Content -->
+                        <div class="single-timeline-area" data-aos="fade-up">
+                            <div class="timeline-date">
+                                <p>{{ $year->year }}</p>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <div class="single-timeline-content row g-0 bg-white" data-aos="fade-right">
-                                    <div class="timeline-image col-4 p-0">
-                                        <img src="{{asset("theme_1/images/impact-1-2.jpg")}}" alt="Education Support Program" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            <div class="row">
+                                @foreach ($impacts->where('year', $year->year) as $impact)
+                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                        <div class="single-timeline-content row g-0 bg-white" data-aos="fade-right">
+                                            <div class="timeline-image col-4 p-0">
+                                                <img src="{{ asset('storage/' .$impact->image) }}" alt="{{ $impact->title }}" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                                            </div>
+                                            <div class="timeline-text col-8 p-3">
+                                                <h6>{{ $impact->title }}</h6>
+                                                <p>{{ $impact->description }}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="timeline-text col-8 p-3">
-                                        <h6>Education Support Program</h6>
-                                        <p>We are launching a new initiative to offer scholarships and tutoring to underprivileged children in Tamil Nadu to improve their educational outcomes.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <div class="single-timeline-content row g-0 bg-white" data-aos="fade-up">
-                                    <div class="timeline-image col-4 p-0">
-                                        <img src="{{asset("theme_1/images/impact-1-3.jpg")}}" alt="Women Empowerment Workshop" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                                    </div>
-                                    <div class="timeline-text col-8 p-3">
-                                        <h6>Women Empowerment Workshop</h6>
-                                        <p>This workshop aims to empower women entrepreneurs in Gujarat by providing them with skills training and resources to help start and grow their own businesses.</p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Single Timeline Content -->
-                    <div class="single-timeline-area" data-aos="fade-up">
-                        <div class="timeline-date">
-                            <p>2022</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <div class="single-timeline-content row g-0 bg-white" data-aos="fade-right">
-                                    <div class="timeline-image col-4 p-0">
-                                        <img src="{{asset("theme_1/images/impact-2-1.jpg")}}" alt="Rural Sanitation Project" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                                    </div>
-                                    <div class="timeline-text col-8 p-3">
-                                        <h6>Rural Sanitation Project</h6>
-                                        <p>In 2022, we successfully completed a project to install clean and safe sanitation facilities in over 50 villages in Bihar, improving public health.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <div class="single-timeline-content row g-0 bg-white" data-aos="fade-right">
-                                    <div class="timeline-image col-4 p-0">
-                                        <img src="{{asset("theme_1/images/impact-2-2.jpg")}}" alt="Environmental Awareness Campaign" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                                    </div>
-                                    <div class="timeline-text col-8 p-3">
-                                        <h6>Environmental Awareness Campaign</h6>
-                                        <p>Our campaign in Maharashtra educated thousands on sustainable practices and organized tree planting drives to combat deforestation.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Timeline Content -->
-                    <div class="single-timeline-area" data-aos="fade-up">
-                        <div class="timeline-date">
-                            <p>2021</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <div class="single-timeline-content row g-0 bg-white" data-aos="fade-right">
-                                    <div class="timeline-image col-4 p-0">
-                                        <img src="{{asset("theme_1/images/impact-3-1.jpg")}}" alt="Skill Development Workshop" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                                    </div>
-                                    <div class="timeline-text col-8 p-3">
-                                        <h6>Skill Development Workshop</h6>
-                                        <p>We conducted workshops in Rajasthan to train young adults in various skills, enhancing their employability and economic opportunities.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <div class="single-timeline-content row g-0 bg-white" data-aos="fade-right">
-                                    <div class="timeline-image col-4 p-0">
-                                        <img src="{{asset("theme_1/images/impact-3-2.jpg")}}" alt="Health and Nutrition Drive" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                                    </div>
-                                    <div class="timeline-text col-8 p-3">
-                                        <h6>Health and Nutrition Drive</h6>
-                                        <p>This initiative provided essential health services and nutrition education to marginalized communities in Andhra Pradesh.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <div class="single-timeline-content row g-0 bg-white" data-aos="fade-up">
-                                    <div class="timeline-image col-4 p-0">
-                                        <img src="{{asset("theme_1/images/impact-3-3.jpg")}}" alt="Emergency Relief Fund" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                                    </div>
-                                    <div class="timeline-text col-8 p-3">
-                                        <h6>Emergency Relief Fund</h6>
-                                        <p>In response to natural disasters, we raised and distributed funds to provide immediate relief and rebuilding support to affected families in Odisha.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 
   <!-- community impact section end -->
@@ -349,36 +236,13 @@
             <p class="lead">A collage of historical photos showcasing important events and milestones.</p>
         </div>
         <div class="row g-3">
+            @foreach ( $historical_photos as $historical_photo )
             <div class="col-12 col-md-4" data-aos="zoom-in">
-                <div class="position-relative overflow-hidden image-container">
-                    <img src="{{asset("theme_1/images/historical-collage-1.jpg")}}" alt="Historical Event 1" class="img-fluid rounded-3 zoom-image">
-                </div>
-            </div>
-            <div class="col-12 col-md-4" data-aos="zoom-in">
-                <div class="position-relative overflow-hidden image-container">
-                    <img src="{{asset("theme_1/images/historical-collage-2.jpg")}}" alt="Historical Event 2" class="img-fluid rounded-3 zoom-image">
-                </div>
-            </div>
-            <div class="col-12 col-md-4" data-aos="zoom-in">
-                <div class="position-relative overflow-hidden image-container">
-                    <img src="{{asset('theme_1/images/historical-collage-3.jpg')}}" alt="Historical Event 3" class="img-fluid rounded-3 zoom-image">
-                </div>
-            </div>
-            <div class="col-12 col-md-4" data-aos="zoom-in">
-                <div class="position-relative overflow-hidden image-container">
-                    <img src="{{asset("theme_1/images/historical-collage-4.jpg")}}" alt="Historical Event 4" class="img-fluid rounded-3 zoom-image">
-                </div>
-            </div>
-            <div class="col-12 col-md-4" data-aos="zoom-in">
-                <div class="position-relative overflow-hidden image-container">
-                    <img src="{{asset("theme_1/images/historical-collage-5.jpg")}}" alt="Historical Event 5" class="img-fluid rounded-3 zoom-image">
-                </div>
-            </div>
-            <div class="col-12 col-md-4" data-aos="zoom-in">
-                <div class="position-relative overflow-hidden image-container">
-                    <img src="{{asset("theme_1/images/historical-collage-6.jpg")}}" alt="Historical Event 6" class="img-fluid rounded-3 zoom-image">
-                </div>
-            </div>
+              <div class="position-relative overflow-hidden image-container">
+                  <img src="{{ asset('storage/' . $historical_photo->image) }}" alt="Historical Event 1" class="img-fluid rounded-3 zoom-image">
+              </div>
+          </div>
+            @endforeach
         </div>
     </div>
 </section>

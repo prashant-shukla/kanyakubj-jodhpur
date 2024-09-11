@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Qirolab\Theme\Middleware\ThemeMiddleware;
@@ -15,6 +17,5 @@ Route::get('/registration-success', function () {
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
-Route::get('/events', function () {
-    return view('events');
-});
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/members', [MemberController::class, 'index']);

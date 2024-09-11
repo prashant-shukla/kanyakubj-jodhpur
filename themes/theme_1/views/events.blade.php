@@ -46,28 +46,27 @@
                         <div class="tab-content pt-5" id="tab-content">
                             <div class="tab-pane active" id="justified-tabpanel-0" role="tabpanel"
                                 aria-labelledby="justified-tab-0">
-                                <!-- start event block -->
+
+                                @foreach ($upcomingevents as $event)
                                 <div data-aos="zoom-in" class="container border border-1 rounded overflow-hidden my-5 p-0">
                                     <div class="row g-0">
                                         <div class="col-12 col-md-6 p-0">
-                                            <img src="https://www.bootdey.com/image/450x180/B0C4DE/000000" alt="Event Image"
+                                            <img src="{{ asset('storage/' . $event->image) }}" alt="Event Image"
                                                 class="img-fluid w-100 h-100">
                                         </div>
                                         <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                                             <div class="p-4">
                                                 <div class="mb-5">
                                                     <span class="me-5"><i class="fa-solid fa-calendar-days me-2"></i>Date:
-                                                        12-09-24</span>
-                                                    <span><i class="fas fa-map-marker-alt me-2"></i> Venue: Central Park,
-                                                        New York</span>
+                                                        {{$event->start_date}} - {{$event->end_date}}</span>
+                                                    <span><i class="fas fa-map-marker-alt me-2"></i> Venue: {{$event->venue}}</span>
                                                 </div>
-                                                <h5 class="mb-3 text-primary">Event Title</h5>
+                                                <h5 class="mb-3 text-primary">{{$event->title}}</h5>
                                                 <ul class="list-unstyled mb-3">
-                                                    <li><i class="far fa-clock me-2"></i> 10:00 AM - 09:00 PM</li>
-                                                    <li><i class="fas fa-user me-2"></i> Speaker: Venil Monts</li>
+                                                    <li><i class="far fa-clock me-2"></i> {{$event->start_time}} - {{$event->end_time}}</li>
+                                                    <li><i class="fas fa-user me-2"></i> Speaker: {{$event->speaker_chief_guest}}</li>
                                                 </ul>
-                                                <p class="mb-4">Duis autem vel eum iriure dolor in hendrerit in vulputate
-                                                    velit esse molestie consequat, vel illum dolore.</p>
+                                                <p class="mb-4">{{$event->description}}</p>
                                                 <a href="#" class="btn btn-primary" data-bs-toggle="modal"
                                                     data-bs-target="#eventRegistrationModal">Register Now</a>
     
@@ -75,68 +74,39 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- end event block -->
-                                <!-- start event block -->
-                                <div data-aos="zoom-in" class="container border border-1 rounded overflow-hidden my-5 p-0">
-                                    <div class="row g-0">
-                                        <div class="col-12 col-md-6 p-0">
-                                            <img src="https://www.bootdey.com/image/450x180/B0C4DE/000000" alt="Event Image"
-                                                class="img-fluid w-100 h-100">
-                                        </div>
-                                        <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
-                                            <div class="p-4">
-                                                <div class="mb-5">
-                                                    <span class="me-5"><i class="fa-solid fa-calendar-days me-2"></i>Date:
-                                                        12-09-24</span>
-                                                    <span><i class="fas fa-map-marker-alt me-2"></i> Venue: Central Park,
-                                                        New York</span>
-                                                </div>
-                                                <h5 class="mb-3 text-primary">Event Title</h5>
-                                                <ul class="list-unstyled mb-3">
-                                                    <li><i class="far fa-clock me-2"></i> 10:00 AM - 09:00 PM</li>
-                                                    <li><i class="fas fa-user me-2"></i> Speaker: Venil Monts</li>
-                                                </ul>
-                                                <p class="mb-4">Duis autem vel eum iriure dolor in hendrerit in vulputate
-                                                    velit esse molestie consequat, vel illum dolore.</p>
-                                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
-                                                    data-bs-target="#eventRegistrationModal">Register Now</a>
-    
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end event block -->
+                                @endforeach
+                                
                             </div>
                             <div class="tab-pane" id="justified-tabpanel-1" role="tabpanel"
                                 aria-labelledby="justified-tab-1">
-                                <!-- start event block -->
-                                <div class="container border border-1 rounded overflow-hidden my-5 p-0">
-                                    <div class="row g-0 bg-danger-subtle">
+                                @foreach ($pastevents as $event)
+                                <div data-aos="zoom-in" class="container border border-1 rounded overflow-hidden my-5 p-0">
+                                    <div class="row bg-danger-subtle g-0">
                                         <div class="col-12 col-md-6 p-0">
-                                            <img src="https://www.bootdey.com/image/450x180/B0C4DE/000000" alt="Event Image"
+                                            <img src="{{ asset('storage/' . $event->image) }}" alt="Event Image"
                                                 class="img-fluid w-100 h-100">
                                         </div>
                                         <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                                             <div class="p-4">
                                                 <div class="mb-5">
                                                     <span class="me-5"><i class="fa-solid fa-calendar-days me-2"></i>Date:
-                                                        12-09-24</span>
-                                                    <span><i class="fas fa-map-marker-alt me-2"></i> Venue: Central Park,
-                                                        New York</span>
+                                                        {{$event->start_date}} - {{$event->end_date}}</span>
+                                                    <span><i class="fas fa-map-marker-alt me-2"></i> Venue: {{$event->venue}}</span>
                                                 </div>
-                                                <h5 class="mb-3 text-primary">Event Title</h5>
+                                                <h5 class="mb-3 text-primary">{{$event->title}}</h5>
                                                 <ul class="list-unstyled mb-3">
-                                                    <li><i class="far fa-clock me-2"></i> 10:00 AM - 09:00 PM</li>
-                                                    <li><i class="fas fa-user me-2"></i> Speaker: Venil Monts</li>
+                                                    <li><i class="far fa-clock me-2"></i> {{$event->start_time}} - {{$event->end_time}}</li>
+                                                    <li><i class="fas fa-user me-2"></i> Speaker: {{$event->speaker_chief_guest}}</li>
                                                 </ul>
-                                                <p class="mb-4">Duis autem vel eum iriure dolor in hendrerit in vulputate
-                                                    velit esse molestie consequat, vel illum dolore.</p>
+                                                <p class="mb-4">{{$event->description}}</p>
+                                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#eventRegistrationModal">Register Now</a>
     
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- end event block -->
+                                @endforeach
                             </div>
                         </div>
                     </div>

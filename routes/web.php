@@ -18,4 +18,6 @@ Route::get('/registration-success', function () {
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/events', [EventController::class, 'index']);
-Route::get('/members', [MemberController::class, 'index']);
+Route::get('/members/{years?}', [MemberController::class, 'members'])->name('members');
+
+

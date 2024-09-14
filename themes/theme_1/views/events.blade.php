@@ -99,8 +99,6 @@
                                                     <li><i class="fas fa-user me-2"></i> Speaker: {{$event->speaker_chief_guest}}</li>
                                                 </ul>
                                                 <p class="mb-4">{{$event->description}}</p>
-                                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
-                                                    data-bs-target="#eventRegistrationModal">Register Now</a>
     
                                             </div>
                                         </div>

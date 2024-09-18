@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePhotoGalleryTable extends Migration
+class CreateGalleryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreatePhotoGalleryTable extends Migration
      */
     public function up()
     {
-        Schema::create('photo_gallery', function (Blueprint $table) {
+        Schema::create('gallery', function (Blueprint $table) {
             $table->id(); // Primary key: auto-incrementing ID
-            $table->string('image'); // URL/path of the photo
+            $table->json('images'); // URL/path of the photo
             $table->unsignedBigInteger('event_id'); // Foreign key for events
 
             // Setting up foreign key constraint
@@ -32,6 +32,6 @@ class CreatePhotoGalleryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('photo_gallery');
+        Schema::dropIfExists('gallery');
     }
 }

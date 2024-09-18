@@ -2,25 +2,27 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PhotoGalleryResource\Pages;
-use App\Filament\Resources\PhotoGalleryResource\RelationManagers;
-use App\Models\Event;
-use App\Models\PhotoGallery;
+use App\Filament\Resources\TenureResource\Pages;
+use App\Filament\Resources\TenureResource\RelationManagers;
+use App\Models\Tenure;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\BooleanColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class PhotoGalleryResource extends Resource
+class TenureResource extends Resource
 {
-    protected static ?string $model = PhotoGallery::class;
+    protected static ?string $model = Tenure::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -28,11 +30,10 @@ class PhotoGalleryResource extends Resource
     {
         return $form
             ->schema([
-                Select::make("event_id")
-                    ->label('Events')
-                    ->options(Event::all()->pluck('title', 'id'))
-                    ->searchable(),
-                FileUpload::make('image')->directory('gallery'),
+                //
+                TextInput::make('title'),
+                Textarea::make('description'),
+                Toggle::make('status')
             ]);
     }
 
@@ -40,10 +41,12 @@ class PhotoGalleryResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('event.title')->label('event'),
-                ImageColumn::make('image'),
+                //
+                TextColumn::make('title'),
+                TextColumn::make('description'),
+                ToggleColumn::make('status')
             ])
-            ->filters([
+            ->filters([ 
                 //
             ])
             ->actions([
@@ -66,9 +69,9 @@ class PhotoGalleryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPhotoGalleries::route('/'),
-            'create' => Pages\CreatePhotoGallery::route('/create'),
-            'edit' => Pages\EditPhotoGallery::route('/{record}/edit'),
+            'index' => Pages\ListTenures::route('/'),
+            'create' => Pages\CreateTenure::route('/create'),
+            'edit' => Pages\EditTenure::route('/{record}/edit'),
         ];
     }
 }

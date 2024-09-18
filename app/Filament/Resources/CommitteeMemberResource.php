@@ -5,9 +5,11 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CommitteeMemberResource\Pages;
 use App\Filament\Resources\CommitteeMemberResource\RelationManagers;
 use App\Models\CommitteeMember;
+use App\Models\Tenure;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -31,8 +33,11 @@ class CommitteeMemberResource extends Resource
                 FileUpload::make('image'),
                 TextInput::make('name'),
                 TextInput::make('position'),
-                TextInput::make('year_start'),
-                TextInput::make('year_end'),
+                Select::make('tenure_id')
+                ->label('Tenure')
+                ->options(Tenure::all()->pluck('title', 'id'))
+                ->required()
+                ->searchable(),
                 TextInput::make("facebook")->label('Facebook link'),
                 TextInput::make("instagram")->label('Instagram link'),
                 TextInput::make("x")->label('X link'),
@@ -46,8 +51,7 @@ class CommitteeMemberResource extends Resource
                 TextColumn::make('name'),
                 ImageColumn::make('image'),
                 TextColumn::make('position'),
-                TextColumn::make('year_start'),
-                TextColumn::make('year_end'),
+                TextColumn::make('tenure_id'),
             ])
             ->filters([
                 //

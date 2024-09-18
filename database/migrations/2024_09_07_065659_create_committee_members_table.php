@@ -19,9 +19,10 @@ class CreateCommitteeMembersTable extends Migration
             $table->string('image')->nullable(); // URL/path of the member's image
             $table->string('position'); // Position in the committee
             $table->json('social_media_links')->nullable(); // JSON or serialized social media links (optional)
-            $table->year('year_start'); // Years served in the committee
-            $table->year('year_end'); // Years served in the committee (optional)
+            $table->unsignedBigInteger('tenure_id');
             $table->timestamps(); // Created at and updated at timestamps
+
+            $table->foreign('tenure_id')->references('id')->on('tenures'); 
         });
     }
 

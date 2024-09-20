@@ -22,6 +22,8 @@
 @endphp
 
 @section('main-section')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
     <!-- hero section start -->
     <section class="hero-section">
         <div class="hero-section-translucent d-flex align-items-center justify-content-center">

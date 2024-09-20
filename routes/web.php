@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AchieverController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MemberController;
@@ -21,4 +22,9 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/members', [MemberController::class, 'index']);
 Route::get('/gallery',[GalleryController::class,'index']);
+Route::get('/achievers', [AchieverController::class,'index']);
 
+
+Route::get('/tribute',function ()  {
+    return view('tribute');
+});

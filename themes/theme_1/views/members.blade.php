@@ -4,31 +4,6 @@
     active
 @endpush
 
-@php
-
-    // Fetch active tenures for the dropdown
-    $tenures = App\Models\Tenure::where('status', '1')->get();
-    // Check if 'tenure' is present in the GET request, else use the default value '2020-2024'
-    $tenure = $_GET['tenure'] ?? $tenures->first()->title;
-
-    // Fetch the tenure record by the title
-    $tenureRecord = App\Models\Tenure::where('title', $tenure)->first();
-
-    // Debugging: Check if the tenure record is being fetched
-    // dd($tenureRecord);
-
-    // If tenure record is found, fetch members by tenure_id, otherwise return an empty collection
-    if ($tenureRecord) {
-        $members = App\Models\CommitteeMember::where('tenure_id', $tenureRecord->id)->get();
-
-        // Debugging: Check if members are being fetched
-        // dd($members);
-    } else {
-        $members = collect(); // Empty collection if no matching tenure is found
-    }
-
-@endphp
-
 @section('main-section')
     <!-- hero section start -->
     <section class="hero-section ">

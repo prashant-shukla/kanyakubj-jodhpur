@@ -1,153 +1,180 @@
 @extends('layout.main')
-@section('title', 'Achievers')
+@section('title', 'Tributes')
 @push('tribute_active')
     active
 @endpush
 
 @php
-    // Fetch the selected year from the GET request, default to the latest year
-    $selectedYear = request('year', '2024'); // Default to 2024 or latest
-
-    // Fetch achievers based on the selected year
-    $achievers = App\Models\Achiever::where('year', $selectedYear)->get();
-
-    // Fetch available years from the achievers table
-    $years = App\Models\Achiever::select('year')->distinct()->orderBy('year', 'desc')->get();
+    $years = App\Models\Tribute::selectRaw('YEAR(d_o_d) as year')->distinct()->orderBy('year', 'desc')->get();
+    $selectedYear = request('year', $years->first()->year ?? date('Y'));
+    $tributes = App\Models\Tribute::whereYear('d_o_d', $selectedYear)->get();
 @endphp
 
 @section('main-section')
-<!-- hero section start -->
-<section class="hero-section ">
+<!-- Hero section start -->
+<section class="hero-section">
     <div class="hero-section-translucent d-flex align-items-center justify-content-center">
-      <div class="hero-content text-white">
-        <h1>Tributes</h1>
-      </div>
+        <div class="hero-content text-white">
+            <h1>Tributes</h1>
+        </div>
     </div>
-  </section>
-  <!-- hero section end -->
-  <!-- Tribute section start -->
-  <section class="team-boxed">
+</section>
+<!-- Hero section end -->
+
+<!-- Tribute section start -->
+<section class="team-boxed">
     <div class="container">
-      <div class="text-center py-4" data-aos="zoom-in">
-        <h4 class="heading playfair-display-heading">Tributes</h4>
-        <p class="lead">Every journey has a story, and every story holds a lesson. <br />Discover how our path was shaped by passion, perseverance, and a relentless pursuit of excellence.</p>
-      </div>
-  
-      <!-- Time Period Filter -->
-      <div class="mb-4 d-flex justify-content-end" data-aos="fade-right">
-        <select id="timePeriodFilter" class="form-select form-select-sm w-auto" aria-label="Filter by Year">
-          <option value="2024" selected>2024</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
-          <option value="2020">2020</option>
-          <!-- Add more years as needed -->
-        </select>
-      </div>
-  
-      <div class="row people">
-        <!-- tribute 1 (2024) -->
-        <div class="col-12 col-md-6 col-lg-3 item" data-aos="zoom-in" data-bs-toggle="modal" data-bs-target="#tributeModal" data-year="2022">
-          <div class="box border border-1 d-flex flex-column justify-content-between">
-            <img class="img-fluid" src="images/avatar-1.jpg" alt="Ben Johnson">
-            <div class="text-center">
-              <h3 class="name mb-2">Ben Johnson</h3>
-              <p class="title mb-3">1988-2022</p>
-              </div>
-          </div>
+        <div class="text-center py-4" data-aos="zoom-in">
+            <h4 class="heading playfair-display-heading">Tributes</h4>
+            <p class="lead">Every journey has a story, and every story holds a lesson. <br />Discover how our path was shaped by passion, perseverance, and a relentless pursuit of excellence.</p>
         </div>
-        <!-- tribute 2 (2023) -->
-        <div class="col-12 col-md-6 col-lg-3 item" data-aos="zoom-in" data-bs-toggle="modal" data-bs-target="#tributeModal" data-year="2023">
-          <div class="box border border-1 d-flex flex-column justify-content-between">
-            <img class="img-fluid" src="images/avatar-2.jpg" alt="Emily Clark">
-            <div class="text-center">
-              <h3 class="name mb-2">Emily Clark</h3>
-              <p class="title mb-3">1988-2023</p>
-            </div>
-          </div>
-        </div>
-  
-        <!-- tribute 3 (2022) -->
-        <div class="col-12 col-md-6 col-lg-3 item" data-aos="zoom-in" data-bs-toggle="modal" data-bs-target="#tributeModal" data-year="2024">
-          <div class="box border border-1 d-flex flex-column justify-content-between">
-            <img class="img-fluid" src="images/avatar-3.jpg" alt="Carl Kent">
-            <div class="text-center">
-              <h3 class="name mb-2">Carl Kent</h3>
-              <p class="title mb-3">1988-2024</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- modal -->
-  <div class="modal fade" id="tributeModal" tabindex="-1" aria-labelledby="tributeModalLabel" aria-hidden="true">
+        <!-- Time Period Filter -->
+        <div class="mb-4 d-flex justify-content-end" data-aos="fade-right">
+            <form id="yearFilterForm" action="{{ url()->current() }}" method="GET">
+                <select id="timePeriodFilter" name="year" class="form-select form-select-sm w-auto" aria-label="Filter by Year" onchange="document.getElementById('yearFilterForm').submit();">
+                    @foreach ($years as $year)
+                        <option value="{{ $year->year }}" {{ $selectedYear == $year->year ? 'selected' : '' }}>
+                            {{ $year->year }}
+                        </option>
+                    @endforeach
+                </select>
+            </form>
+        </div>
+
+        <div class="row people">
+            @foreach ($tributes as $tribute)
+                <div class="col-12 col-md-6 col-lg-3 item" data-aos="zoom-in" data-bs-toggle="modal" data-bs-target="#tributeModal" data-tribute="{{ $tribute->id }}">
+                    <div class="box border border-1 d-flex flex-column justify-content-between">
+                        <img class="img-fluid" src="{{ asset('storage/' . $tribute->image) }}" alt="{{ $tribute->name }}">
+                        <div class="text-center">
+                            <h3 class="name mb-2">{{ $tribute->name }}</h3>
+                            <p class="title mb-3">{{ date('Y', strtotime($tribute->d_o_b)) }} - {{ date('Y', strtotime($tribute->d_o_d)) }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Tribute Details -->
+<div class="modal fade" id="tributeModal" tabindex="-1" aria-labelledby="tributeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="tributeModalLabel">Tribute Details</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tributeModalLabel">Tribute Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column flex-md-row align-items-center">
+                <div class="modal-image mb-3 mb-md-0 me-md-4">
+                    <img class="img-fluid" id="tributeImage" src="" style="width:300px;" alt="Tribute Image">
+                </div>
+                <div class="modal-details">
+                    <h5 id="tributeName">Name Placeholder</h5>
+                    <p id="tributeDates" class="text-muted mb-1">Year Placeholder</p>
+                    <p id="tributeInfo">Description Placeholder</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button_header button--pan" data-bs-dismiss="modal"><span>Close</span></button>
+            </div>
         </div>
-        <div class="modal-body d-flex flex-column flex-md-row align-items-center">
-          <!-- Placeholder image -->
-          <div class="modal-image mb-3 mb-md-0 me-md-4">
-            <img class="img-fluid" src="images/avatar-1.jpg" style="width:300px;" alt="Ben Johnson">
-          </div>
-          <!-- Tribute details -->
-          <div class="modal-details">
-            <h5 id="tributeName">John Doe</h5>
-            <p id="tributeDates" class="text-muted mb-1">1970-2023</p>
-            <p id="tributeInfo">John Doe was a visionary in his field. His work and dedication continue to inspire many. He will be remembered for his passion and contributions.</p>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="button_header button--pan" data-bs-dismiss="modal"><span>Close</span></button>
-        </div>
-      </div>
     </div>
-  </div>
-  
-  <!-- tribute section end -->
+</div>
 
-  <!-- submit tribute start -->
-  <section id="Tribute_Form">
+<!-- Tribute section end -->
+
+<!-- submit tribute start -->
+<section id="Tribute_Form">
     <div class="container py-5">
-      <div class="text-center mb-4" data-aos="zoom-in">
-        <h4 class="heading playfair-display-heading">Submit Tribute</h4>
-        <p class="lead">Let's honor those who made an impact on our community.</p>
-      </div>
-      <div class="row justify-content-center mt-3">
-        <div class="col-md-8 col-lg-6" data-aos="fade-right">
-          <form>
-            <div class="mb-3">
-              <label for="tributeName" class="form-label">Enter Fullname</label>
-              <input type="text" class="form-control" id="tributeName" placeholder="Enter the name of the person">
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="dob" class="form-label">Date of Birth</label>
-                <input type="date" class="form-control" id="dob">
-              </div>
-              <div class="col-md-6">
-                <label for="dod" class="form-label">Date of Passing</label>
-                <input type="date" class="form-control" id="dod">
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="tributeImage" class="form-label">Image</label>
-              <input type="file" class="form-control" id="tributeImage" accept="image/*">
-            </div>
-            <div class="mb-3">
-              <label for="tributeDescription" class="form-label">Short Description</label>
-              <textarea class="form-control" id="tributeDescription" rows="4" placeholder="Enter a short description"></textarea>
-            </div>
-            <button type="submit" class="button_header button--pan"><span>Submit Tribute</span></button>
-          </form>
+        <div class="text-center mb-4" data-aos="zoom-in">
+            <h4 class="heading playfair-display-heading">Submit Tribute</h4>
+            <p class="lead">Let's honor those who made an impact on our community.</p>
         </div>
-      </div>
+
+        <!-- Display success message -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <!-- Tribute submission form -->
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8 col-lg-6" data-aos="fade-right">
+                <form action="\tribute" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <!-- Name -->
+                    <div class="mb-3">
+                        <label for="tributeName" class="form-label">Enter Fullname</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="tributeName" name="name" value="{{ old('name') }}" placeholder="Enter the name of the person" required>
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <!-- Date of Birth and Date of Passing -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control @error('d_o_b') is-invalid @enderror" id="dob" name="d_o_b" value="{{ old('d_o_b') }}" required>
+                            @error('d_o_b')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6">
+                            <label for="dod" class="form-label">Date of Passing</label>
+                            <input type="date" class="form-control @error('d_o_d') is-invalid @enderror" id="dod" name="d_o_d" value="{{ old('d_o_d') }}" required>
+                            @error('d_o_d')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="mb-3">
+                        <label for="tributeImage" class="form-label">Image</label>
+                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="tributeImage" name="image" accept="image/*" required>
+                        @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <!-- Short Description -->
+                    <div class="mb-3">
+                        <label for="tributeDescription" class="form-label">Short Description</label>
+                        <textarea class="form-control @error('description') is-invalid @enderror" id="tributeDescription" name="description" rows="4" placeholder="Enter a short description" required  >{{ old('description') }}</textarea>
+                        @error('description')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="button_header button--pan"><span>Submit Tribute</span></button>
+                </form>      
+            </div>
+        </div>
     </div>
-  </section>
-  
-  <!-- submit tribute -->
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const tributes = @json($tributes);
+
+      document.querySelectorAll('.item[data-bs-toggle="modal"]').forEach(item => {
+          item.addEventListener('click', function () {
+              const tributeId = this.dataset.tribute;
+              const tribute = tributes.find(t => t.id == tributeId);
+
+              if (tribute) {
+                  document.getElementById('tributeName').innerText = tribute.name;
+                  document.getElementById('tributeDates').innerText = `${new Date(tribute.d_o_b).getFullYear()} - ${new Date(tribute.d_o_d).getFullYear()}`;
+                  document.getElementById('tributeInfo').innerText = tribute.description;
+                  document.getElementById('tributeImage').src = `{{ asset('storage') }}/${tribute.image}`;
+              }
+          });
+      });
+  });
+</script>
 @endsection

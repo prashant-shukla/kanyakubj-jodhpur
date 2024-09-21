@@ -4,23 +4,6 @@
     active
 @endpush
 
-@php
-    // Fetch the selected event title from the GET request, default to 'all'
-    $eventTitle = request('event', 'all'); // Use Laravel's request helper
-
-    // Fetch galleries based on the selected event title
-    if ($eventTitle === 'all') {
-        $photos = App\Models\Gallery::all(); // Fetch all galleries if 'all' is selected
-    } else {
-        $photos = App\Models\Gallery::whereHas('event', function ($query) use ($eventTitle) {
-            $query->where('title', $eventTitle);
-        })->get(); // Filter galleries by event title
-    }
-
-    // Fetch all events for the filter dropdown
-    $events = App\Models\Event::all();
-@endphp
-
 @section('main-section')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
 
@@ -39,7 +22,6 @@
         <div class="mb-4 d-flex justify-content-end" data-aos="fade-right">
             <form id="eventFilterForm" action="/gallery" method="GET">
                 <select id="filter-event" name="event" class="form-select w-auto" aria-label="Filter by Event" onchange="document.getElementById('eventFilterForm').submit();">
-                    <option value="all" {{ $eventTitle === 'all' ? 'selected' : '' }}>All Events</option>
                     @foreach ($events as $event)
                         <option value="{{ $event->title }}" {{ $eventTitle === $event->title ? 'selected' : '' }}>
                             {{ $event->title }}
@@ -75,6 +57,5 @@
     <!-- Image gallery section end -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 @endsection

@@ -20,7 +20,6 @@ class CreateTributesTable extends Migration
             $table->date('d_o_b'); // Date of Birth
             $table->date('d_o_d'); // Date of Death (nullable if still living)
             $table->text('description'); // Description of the tribute
-            $table->year('year'); // Year of the tribute
             $table->timestamps(); // Created at and updated at timestamps
         });
     }

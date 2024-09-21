@@ -2,25 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GalleryResource\Pages;
-use App\Filament\Resources\GalleryResource\RelationManagers;
-use App\Models\Event;
-use App\Models\Gallery;
-use Filament\Forms;
+use App\Filament\Resources\TributeResource\Pages;
+use App\Models\Tribute;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class GalleryResource extends Resource
+class TributeResource extends Resource
 {
-    protected static ?string $model = Gallery::class;
+    protected static ?string $model = Tribute::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -28,12 +25,11 @@ class GalleryResource extends Resource
     {
         return $form
             ->schema([
-                //
-                Select::make('event_id')
-                    ->label('Event')->columnSpan(2)
-                    ->options(Event::all()->pluck('title','id')),
-                FileUpload::make('images')
-                    ->multiple()->maxFiles(20)->columnSpan(2),
+                FileUpload::make('image')->image()->directory('tributes')->avatar()->columnSpanFull()->alignCenter(),
+                TextInput::make('name')->columnSpan(2),
+                DatePicker::make('d_o_b')->label('date of birth'),
+                DatePicker::make('d_o_d')->label('date of passing'),
+                Textarea::make('description')->columnSpan(2),
             ]);
     }
 
@@ -41,9 +37,11 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
-                //
-                TextColumn::make('event.title'),
-                ImageColumn::make('images')
+                TextColumn::make('name'),
+                ImageColumn::make('image'),
+                TextColumn::make('d_o_b')->label('Birth Date'),
+                TextColumn::make('d_o_d')->label('Passing Date'),
+                TextColumn::make('description'),
             ])
             ->filters([
                 //
@@ -68,9 +66,9 @@ class GalleryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGalleries::route('/'),
-            'create' => Pages\CreateGallery::route('/create'),
-            'edit' => Pages\EditGallery::route('/{record}/edit'),
+            'index' => Pages\ListTributes::route('/'),
+            'create' => Pages\CreateTribute::route('/create'),
+            'edit' => Pages\EditTribute::route('/{record}/edit'),
         ];
     }
 }

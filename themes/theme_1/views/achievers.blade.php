@@ -4,17 +4,6 @@
     active
 @endpush
 
-@php
-    // Fetch the selected year from the GET request, default to the latest year
-    $selectedYear = request('year', '2024'); // Default to 2024 or latest
-
-    // Fetch achievers based on the selected year
-    $achievers = App\Models\Achiever::where('year', $selectedYear)->get();
-
-    // Fetch available years from the achievers table
-    $years = App\Models\Achiever::select('year')->distinct()->orderBy('year', 'desc')->get();
-@endphp
-
 @section('main-section')
   <!-- hero section start -->
   <section class="hero-section">

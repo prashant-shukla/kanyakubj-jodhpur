@@ -9,7 +9,7 @@ class EventController extends Controller
 {
     //
     public function index(){
-        $upcomingevents = Event::where('start_date', '>=', date('Y-m-d'))->get();
+        $upcomingevents = Event::where('end_date', '>=', date('Y-m-d'))->get();
         $pastevents = Event::where('end_date', '<', date('Y-m-d'))->get();
 
         return view('events',compact('upcomingevents','pastevents'));

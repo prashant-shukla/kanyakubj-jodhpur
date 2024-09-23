@@ -29,4 +29,3 @@ Route::get('/tribute', [TributeController::class,'index']);
 Route::post('/tribute', [TributeController::class, 'store']);
 Route::get('/contact', [ContactController::class,'index']);
 Route::post('/contact', [ContactController::class, 'store']);
-

@@ -5,7 +5,9 @@
         "dev": "vite",
         "build": "vite build",
         "dev:theme_1": "vite --config themes/theme_1/vite.config.js",
-        "build:theme_1": "vite build --config themes/theme_1/vite.config.js"
+        "build:theme_1": "vite build --config themes/theme_1/vite.config.js",
+        "dev:theme_2": "vite --config themes/theme_2/vite.config.js",
+        "build:theme_2": "vite build --config themes/theme_2/vite.config.js"
     },
     "devDependencies": {
         "axios": "^1.6.4",

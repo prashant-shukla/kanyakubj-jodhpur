@@ -39,14 +39,13 @@ class ContactController extends Controller
 
         // Send email directly
         Mail::send([], [], function ($message) use ($emailData) {
-            $message->to('officialharishchoudhary@gmail.com')
-                ->subject('New Contact Us Message')
+            $message->to(setting("contact.email"))
+                ->subject($emailData['subject'])
                 ->html("
                         <h1>New Contact Us Message</h1>
                         <p><strong>Full Name:</strong> {$emailData['fullname']}</p>
                         <p><strong>Email:</strong> {$emailData['email']}</p>
                         <p><strong>Phone:</strong> {$emailData['phone_number']}</p>
-                        <p><strong>Subject:</strong> {$emailData['subject']}</p>
                         <p><strong>Message:</strong> {$emailData['message']}</p>
                     ");
         });

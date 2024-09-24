@@ -38,8 +38,9 @@
                                 </div>
                                 <div>
                                     <h6 class="mb-3">Address</h6>
-                                    <address class="mb-0 text-secondary">8014 Edith Blvd NE, Albuquerque, New York, United
-                                        States</address>
+                                    <address class="mb-0 text-secondary">{{ setting('contact.address.street') }}
+                                        ,{{ setting('contact.address.city') }} ,{{ setting('contact.address.state') }}
+                                        ,{{ setting('contact.address.country') }}</address>
                                 </div>
                             </div>
                             <div class="row mb-5">
@@ -51,8 +52,7 @@
                                         <div>
                                             <h6 class="mb-3">Phone</h6>
                                             <p class="mb-0">
-                                                <a class="link-secondary text-decoration-none" href="tel:+15057922430">(505)
-                                                    792-2430</a>
+                                                <a class="link-secondary text-decoration-none" href="tel:+15057922430">{{setting('contact.phone')}}</a>
                                             </p>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                             <h6 class="mb-3">E-Mail</h6>
                                             <p class="mb-0">
                                                 <a class="link-secondary text-decoration-none"
-                                                    href="mailto:demo@yourdomain.com">demo@yourdomain.com</a>
+                                                    href="mailto:demo@yourdomain.com">{{setting('contact.email')}}</a>
                                             </p>
                                         </div>
                                     </div>
@@ -158,8 +158,9 @@
             </div>
             <div class="row">
                 <div class="col-12" data-aos="zoom-in">
+                    
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.3812605085654!2d-74.00601518459464!3d40.71277577933153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a1c43421721%3A0x62e53bfc600d64d!2sOne%20World%20Trade%20Center%2C%20New%20York%2C%20NY%2010007!5e0!3m2!1sen!2sus!4v1630492298211!5m2!1sen!2sus"
+                        src="{{ setting('contact.google_maps')}}"
                         width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
@@ -168,13 +169,13 @@
     <!-- map section end -->
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          const form = document.querySelector('form');
-          form.addEventListener('submit', function() {
-              const submitButton = form.querySelector('button[type="submit"]');
-              submitButton.disabled = true;
-              submitButton.textContent = 'Sending...'; // Optional, to give feedback to the user
-          });
-      });
-  </script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function() {
+                const submitButton = form.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...'; // Optional, to give feedback to the user
+            });
+        });
+    </script>
 @endsection

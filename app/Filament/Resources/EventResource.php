@@ -48,8 +48,8 @@ class EventResource extends Resource
                 TextColumn::make('title'),
                 TextColumn::make('venue'),
                 TextColumn::make('speaker_chief_guest'),
-                TextColumn::make('start_date'),
-                TextColumn::make('end_date'),
+                TextColumn::make('start_date')->date(setting('time.date_format')),
+                TextColumn::make('end_date')->date(setting('time.date_format')),
             ])
             ->filters([
                 //

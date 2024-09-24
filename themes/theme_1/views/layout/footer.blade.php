@@ -14,14 +14,16 @@
             <h4 class="heading playfair-display-heading">Important Links</h4>
             <div class="d-flex">
               <ul class="list-unstyled me-5">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/tribute">Tribute</a></li>
               </ul>
               <ul class="list-unstyled">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
+                <li><a href="/members">Members</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/achievers">Achievers</a></li>
+                <li><a href="/contact">Contact us</a></li>
               </ul>
             </div>
           </div>
@@ -40,10 +42,10 @@
           <p class="mb-0 text-center text-md-start">All Rights Reserved.</p>
         </div>
         <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-          <a href="#" class="social-icon text-decoration-none text-reset"><i class="fa-brands fa-facebook mx-2"></i></a>
-          <a href="#" class="social-icon text-decoration-none text-reset"><i
+          <a href="{{setting('social.facebook')}}" class="social-icon text-decoration-none text-reset"><i class="fa-brands fa-facebook mx-2"></i></a>
+          <a href="{{setting('social.instagram')}}" class="social-icon text-decoration-none text-reset"><i
               class="fa-brands fa-instagram mx-2"></i></a>
-          <a href="#" class="social-icon text-decoration-none text-reset"><i
+          <a href="{{setting('social.twitter')}}" class="social-icon text-decoration-none text-reset"><i
               class="fa-brands fa-x-twitter mx-2"></i></a>
         </div>
       </div>
@@ -51,7 +53,7 @@
   </section>
   <!-- footer section end  -->
   <!-- floating button start -->
-  <a href="#" class="float" target="_blank">
+  <a href="{{setting('social.whatsapp')}}" class="float" target="_blank">
     <i class="fa-brands fa-whatsapp my-float"></i>
   </a>
   <!-- floating button end -->

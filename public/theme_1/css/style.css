@@ -20,8 +20,8 @@
   
 /* Variables */
 :root {
-    --primaryColor: #FF671F;
-    /* This color can be used for #FF671F primary buttons, calls to action, and key highlights. */
+    --primaryColor: var(--primaryColor);
+    /* This color can be used for var(--primaryColor) primary buttons, calls to action, and key highlights. */
     --textColor: #333333;
     /* This color can be used for Text and headings. */
     --backgroundColor: #F5F5F5;
@@ -29,7 +29,7 @@
     --accentColor: #0062CC;
     /* A bold blue color for secondary buttons or links */
     --secondaryColor: #FFD700;
-    /* A golden yellow for highlights and hover effects) */
+    /* A golden yellow for #FFD700 highlights and hover effects) */
     --subtleColor: #ECECEC;
     /* For subtle sections */
 }
@@ -71,7 +71,7 @@
 }
 
 .footer-header {
-    background: #ff661f4f;
+    background-color: var(--primaryTransparent);
 }
 
 .footer-strip {
@@ -106,7 +106,7 @@
 }
 
 .widget>.card-title {
-    color: #FF671F; /* Main color for the title */
+    color: var(--primaryColor); /* Main color for the title */
 }
 
 .sunrise, .sunset {
@@ -114,11 +114,11 @@
 }
 
 .sunrise i, .sunset i {
-    color: #FF671F; /* Main color for icons */
+    color: var(--primaryColor); /* Main color for icons */
 }
 
 .sunset i {
-    color: #FF5722; /* Sunset color for icons */
+    color: var(--primaryColor); /* Sunset color for icons */
 }
 
 .image-wrapper {
@@ -514,14 +514,14 @@
     }
     .form-control:focus , .form-select:focus {
         border-color: var(--primaryColor); /* Orange border */
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 145, 0, 0.485); /* Orange shadow */
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--primaryTransparent); /* Orange shadow */
     }
     input[type="radio"]:checked{
         background-color: var(--primaryColor);
         border-color: var(--primaryColor);
     }
     input[type="radio"]:focus{
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 145, 0, 0.485); /* Orange shadow */
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--primaryTransparent); /* Orange shadow */
     }
 
 

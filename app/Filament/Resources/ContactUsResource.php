@@ -22,7 +22,7 @@ class ContactUsResource extends Resource
 {
     protected static ?string $model = ContactUs::class;
     protected static ?string $label = 'Messages';
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-oval-left-ellipsis';
 
     public static function form(Form $form): Form
     {

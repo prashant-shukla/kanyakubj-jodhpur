@@ -18,4 +18,9 @@ class HomeController extends Controller
         // Pass the slides to the view
         return view('index', compact('slides', 'quote', 'testimonials'));
     }
+
+
+    public function changeLanguage($Language = 'EN'):string{
+        dd($Language);
+    }
 }

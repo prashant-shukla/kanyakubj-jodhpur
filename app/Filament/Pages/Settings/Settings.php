@@ -10,6 +10,7 @@ use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Outerweb\FilamentSettings\Filament\Pages\Settings as BaseSettings;
+use Spatie\GoogleFonts\Fonts;
 
 class Settings extends BaseSettings
 {
@@ -121,9 +122,8 @@ class Settings extends BaseSettings
                             Select::make('localization.default_language')
                                 ->label('Default Language')
                                 ->options([
-                                    'English' => 'English',
-                                    'Spanish' => 'Spanish',
-                                    // Add other languages as needed
+                                    'en' => 'English',
+                                    'hi' => 'Hindi',
                                 ]),
                             Select::make('localization.multi_language')
                                 ->label('Multi-language Support'),
@@ -152,8 +152,8 @@ class Settings extends BaseSettings
                             TextInput::make('theme.button_styles')
                                 ->label('Button Styles'),
                             Select::make('theme.layout_options')
-                                ->label('Header Layout')
-                                ->options(['sticky' => 'Sticky', 'static' => 'Static']),
+                                ->label('Header position')
+                                ->options(['sticky-top' => 'Sticky', 'static' => 'Static']),
                         ]),
                     Tabs\Tab::make('Branding & SEO')
                         ->schema([

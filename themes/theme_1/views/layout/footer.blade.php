@@ -60,9 +60,83 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   AOS.init({
     duration: 1200, // Animation duration
   });
+
+  /**
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false // Prevents the auto-translation banner
+    });
+  }
+
+  $(document).on('change', "#languageSelect", function(e) {
+    e.preventDefault();
+    var selectedLang = $(this).val();
+    if (selectedLang) {
+      setTimeout(function() {
+        changeLanguage(selectedLang);
+      }, 1000); // Wait for Google Translate widget to load
+    }
+  });
+
+  function changeLanguage(lang) {
+    var translateElement = document.querySelector('.goog-te-combo');
+    if (translateElement) {
+      translateElement.value = lang;
+      translateElement.dispatchEvent(new Event('change'));
+    }
+  } */
 </script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script type="text/javascript">
+  var googleTranslateElement; // Global variable for the Google Translate element
+  var translateDropdown; // Variable to hold the dropdown reference
+
+  function googleTranslateElementInit() {
+    googleTranslateElement = new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false // Prevents the auto-translation banner
+    });
+
+    // Use a timeout to periodically check for the dropdown
+    checkForDropdown();
+  }
+
+  function checkForDropdown() {
+    translateDropdown = document.querySelector('.goog-te-combo');
+    if (!translateDropdown) {
+      // Retry every 100ms until found
+      setTimeout(checkForDropdown, 100);
+    }
+  }
+
+  $(document).on('change', "#languageSelect", function(e) {
+    e.preventDefault();
+    var selectedLang = $(this).val();
+    if (selectedLang) {
+      changeLanguage(selectedLang);
+    }
+  });
+
+  // Function to trigger Google Translate language change
+  function changeLanguage(lang) {
+    if (translateDropdown) {
+      translateDropdown.value = lang;
+      translateDropdown.dispatchEvent(new Event('change')); // Simulate the change event
+    } else {
+      console.error("Google Translate dropdown not found");
+    }
+  }
+</script>
+
+
+
 </html>

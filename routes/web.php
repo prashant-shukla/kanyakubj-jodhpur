@@ -11,6 +11,11 @@ use App\Http\Controllers\TributeController;
 use Illuminate\Support\Facades\Route;
 use Qirolab\Theme\Middleware\ThemeMiddleware;
 
+Route::get('/change-language', function () {
+    return view('welcome');
+});
+Route::get('/change-language', [HomeController::class, 'changeLanguage'])->name('change.language');
+
 Route::get('/register', function () {
     return view('welcome');
 });

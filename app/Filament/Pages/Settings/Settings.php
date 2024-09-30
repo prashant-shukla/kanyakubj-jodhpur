@@ -9,6 +9,8 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\ToggleButtons;
 use Outerweb\FilamentSettings\Filament\Pages\Settings as BaseSettings;
 use Spatie\GoogleFonts\Fonts;
 
@@ -122,10 +124,20 @@ class Settings extends BaseSettings
                             Select::make('localization.default_language')
                                 ->label('Default Language')
                                 ->options([
+                                    //includedLanguages: 'en,hi,gu,ta,te,bn,kn,ml,mr,pa,or',
                                     'en' => 'English',
                                     'hi' => 'Hindi',
+                                    'gu' => 'Gujrati',
+                                    'mr' => 'Marathi',
+                                    'ta' => 'Tamil',
+                                    'te' => 'Telugu',
+                                    'bn' => 'Bengali',
+                                    'kn' => 'Kannada',
+                                    'ml' => 'Malayalam',
+                                    'or' => 'Odia',
+                                    'pa' => 'Punjabi',
                                 ]),
-                            Select::make('localization.multi_language')
+                            Toggle::make('localization.multi_language')
                                 ->label('Multi-language Support'),
                         ]),
                     Tabs\Tab::make('Social Media Links')

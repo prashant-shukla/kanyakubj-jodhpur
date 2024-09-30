@@ -58,7 +58,9 @@
                                             <div class="p-4">
                                                 <div class="mb-5">
                                                     <span class="me-5"><i class="fa-solid fa-calendar-days me-2"></i>Date:
-                                                        {{$event->start_date}} - {{$event->end_date}}</span>
+                                                        {{ \Carbon\Carbon::parse($event->start_date)->format(setting('time.date_format')) }} - 
+                                                        {{ \Carbon\Carbon::parse($event->end_date)->format(setting('time.date_format')) }}
+                                                    </span>
                                                     <span><i class="fas fa-map-marker-alt me-2"></i> Venue: {{$event->venue}}</span>
                                                 </div>
                                                 <h5 class="mb-3 text-primary">{{$event->title}}</h5>
@@ -90,7 +92,9 @@
                                             <div class="p-4">
                                                 <div class="mb-5">
                                                     <span class="me-5"><i class="fa-solid fa-calendar-days me-2"></i>Date:
-                                                        {{$event->start_date}} - {{$event->end_date}}</span>
+                                                        {{ \Carbon\Carbon::parse($event->start_date)->format(setting('time.date_format')) }} - 
+                                                        {{ \Carbon\Carbon::parse($event->end_date)->format(setting('time.date_format')) }}
+                                                    </span>
                                                     <span><i class="fas fa-map-marker-alt me-2"></i> Venue: {{$event->venue}}</span>
                                                 </div>
                                                 <h5 class="mb-3 text-primary">{{$event->title}}</h5>

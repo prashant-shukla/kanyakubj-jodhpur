@@ -27,7 +27,16 @@
             --secondaryColor: {{ setting('theme.secondary_color') }};
             /* A golden yellow for #FFD700 highlights and hover effects) */
         }
+
+        .VIpgJd-ZVi9od-ORHb-OEVmcd {
+            display: none;
+        }
+
+        body {
+            top: 0px !important;
+        }
     </style>
+
 </head>
 
 <body class="roboto-body-text">
@@ -68,39 +77,46 @@
                             <a class="nav-link @stack('contact_active')" href="contact">Contact Us</a>
                         </li>
                     </ul>
-                    <div class="d-flex align-items-center ms-3">
-                      <div id="google_translate_element"></div>
+                    <div class="d-flex align-items-center flex-column flex-md-row">
+                        <div class="d-flex">
+                            <button class="button_header button--pan mx-2"><span>Donate</span></button>
+                            <a href="/register"><button
+                                    class="button_header button--pan"><span>Register</span></button></a>
+                        </div>
+                        @if (setting('localization.multi_language'))
+                            <div id="google_translate_element" class="ms-2 mt-2 mt-md-0"></div>
 
-                        <button class="button_header button--pan mx-2"><span>Donate</span></button>
-                        <a href="/register"><button class="button_header button--pan"><span>Register</span></button></a>
-                        <select id="languageSelect" class="form-select d-inline-block w-auto ms-3">
-                          <option value="">Select Language</option>
-                          <option value="en">English</option>
-                          <option value="hi">Hindi</option>
-                          <option value="es">Spanish</option>
-                          <option value="fr">French</option>
-                          <option value="de">German</option>
-                          <option value="it">Italian</option>
-                        </select>
-                  
-                      <!-- Hidden Google Translate Element -->
+                            <style>
+                                .goog-logo-link {
+                                    display: none !important;
+                                }
 
-                      </div>
+                                .goog-te-gadget {
+                                    font-size: 0px !important;
+                                }
+
+                                .goog-te-banner-frame.skiptranslate,
+                                .goog-te-gadget-icon {
+                                    display: none !important;
+                                }
+
+                                div#google_translate_element div.goog-te-gadget-simple {
+                                    border: 1px solid #ced4da;
+                                    border-radius: 1.375rem;
+                                    padding: 0.375rem 0.75rem;
+                                    display: inline-block;
+                                    font-size: 1rem;
+                                    background-color: white;
+                                    width: auto;
+                                    height: auto;
+                                }
+                            </style>
+                        @endif
                     </div>
                 </div>
+            </div>
             </div>
         </nav>
     </header>
 
-
-    <style>
-      .goog-te-banner-frame.skiptranslate,
-      .goog-te-gadget-icon {
-        display: none !important;
-      }
-      body {
-        top: 0px !important;
-      }
-    </style>
     <!-- header section end -->
-

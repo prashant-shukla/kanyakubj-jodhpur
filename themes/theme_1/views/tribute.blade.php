@@ -64,7 +64,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="tributeModalLabel">Tribute Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <span class="{{setting('theme.button_styles')}}"><button type="button" class="button btn-close" data-bs-dismiss="modal" aria-label="Close"></button></span>
             </div>
             <div class="modal-body d-flex flex-column flex-md-row align-items-center">
                 <div class="modal-image mb-3 mb-md-0 me-md-4">
@@ -77,7 +77,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="button_header button--pan" data-bs-dismiss="modal"><span>Close</span></button>
+                <span class="{{setting('theme.button_styles')}}"><button type="button" class="button button_header button--pan" data-bs-dismiss="modal"><span>Close</span></button></span>
             </div>
         </div>
     </div>
@@ -151,7 +151,7 @@
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" class="button_header button--pan"><span>Submit Tribute</span></button>
+                    <span class="{{setting('theme.button_styles')}}"><button type="submit" class="button button_header button--pan"><span>Submit Tribute</span></button></span>
                 </form>      
             </div>
         </div>

@@ -79,9 +79,9 @@
                     </ul>
                     <div class="d-flex align-items-center flex-column flex-md-row">
                         <div class="d-flex">
-                            <button class="button_header button--pan mx-2"><span>Donate</span></button>
-                            <a href="/register"><button
-                                    class="button_header button--pan"><span>Register</span></button></a>
+                            <span class="{{setting('theme.button_styles')}}"><button class="button button_header button--pan mx-2"><span>Donate</span></button></span>
+                            <a href="/register" class="{{setting('theme.button_styles')}}"><button
+                                    class="button button_header button--pan"><span>Register</span></button></a>
                         </div>
                         @if (setting('localization.multi_language'))
                             <div id="google_translate_element" class="ms-2 mt-2 mt-md-0"></div>

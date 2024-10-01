@@ -252,9 +252,9 @@
             <h4 class="heading playfair-display-heading">Support Our Cause</h2>
                 <p class="mb-4">Your contribution helps us continue our mission. Every donation makes a difference.</p>
 
-                <button type="button" class="button button--pan" data-bs-toggle="modal" data-bs-target="#donateModal">
+                <span class="{{setting('theme.button_styles')}}"><button type="button" class="button button--pan" data-bs-toggle="modal" data-bs-target="#donateModal">
                     <span>Donate Now</span>
-                </button>
+                </button></span>
 
         </div>
 
@@ -275,8 +275,8 @@
                             ea commodo consequat.</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="button_header button--pan"
-                            data-bs-dismiss="modal"><span>Close</span></button>
+                        <span class="{{setting('theme.button_styles')}}"><button type="button" class="button button_header button--pan"
+                            data-bs-dismiss="modal"><span>Close</span></button></span>
                     </div>
                 </div>
             </div>

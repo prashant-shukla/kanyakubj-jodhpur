@@ -161,8 +161,8 @@ class Settings extends BaseSettings
                                 ->label('Secondary Color'),
                             Select::make('theme.font_family')
                                 ->label('Font Family'),
-                            TextInput::make('theme.button_styles')
-                                ->label('Button Styles'),
+                            Select::make('theme.button_styles')
+                                ->label('Button Styles')->options(["button1" => "style1","button2" => "style2","button3" => "style3","button4" => "style4"]),
                             Select::make('theme.layout_options')
                                 ->label('Header position')
                                 ->options(['sticky-top' => 'Sticky', 'static' => 'Static']),

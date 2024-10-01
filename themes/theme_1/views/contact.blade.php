@@ -135,9 +135,9 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="d-grid">
-                                        <button class="button_header button--pan" type="submit">
+                                        <span class="{{setting('theme.button_styles')}}"><button class="button button_header button--pan mx-auto" type="submit">
                                             <span>Send Message</span>
-                                        </button>
+                                        </button></span>
                                     </div>
                                 </div>
                             </div>

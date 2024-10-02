@@ -267,12 +267,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <img src="https://placehold.co/300x150/png" class="img-fluid mb-3" alt="Donation Image">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                            labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex
-                            ea commodo consequat.</p>
+                        <img src="{{ asset('storage/' . setting('community.payment')) }}" class="img-fluid mb-3" alt="Donation Image">
+                        <p>{{setting('community.donation_text')}}</p>
                     </div>
                     <div class="modal-footer">
                         <span class="{{setting('theme.button_styles')}}"><button type="button" class="button button_header button--pan"

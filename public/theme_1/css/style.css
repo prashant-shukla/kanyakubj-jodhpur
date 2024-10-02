@@ -304,9 +304,9 @@
 /* From Uiverse.io by cssbuttons-io */
 .button3 .button {
     --color: var(--primaryColor);
+    padding: 0.4rem 1.5rem;
     font-family: inherit;
     display: inline-block;
-    width: 8em;
     height: 2.6em;
     line-height: 1.5em;
     position: relative;
@@ -354,7 +354,7 @@
 /* button 4 */
 /* From Uiverse.io by CristianMontoya98 */
 .button4 .button {
-    width: 6.5em;
+    padding: 0rem 1.5rem;
     height: 2.3em;
     margin: 0.5em;
     background: var(--primaryColor);

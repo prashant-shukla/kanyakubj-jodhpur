@@ -79,7 +79,9 @@
                     </ul>
                     <div class="d-flex align-items-center flex-column flex-md-row">
                         <div class="d-flex">
-                            <span class="{{setting('theme.button_styles')}}"><button class="button button_header button--pan mx-2"><span>Donate</span></button></span>
+                            <span class="{{setting('theme.button_styles')}}"><button type="button" class="button button--pan" data-bs-toggle="modal" data-bs-target="#donateModal">
+                                <span>Donate</span>
+                            </button></span>
                             <a href="/register" class="{{setting('theme.button_styles')}}"><button
                                     class="button button_header button--pan"><span>Register</span></button></a>
                         </div>

@@ -8,9 +8,12 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\TagsInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\ToggleButtons;
+use Filament\Support\Enums\FontFamily;
+use JaOcero\RadioDeck\Forms\Components\RadioDeck;
 use Outerweb\FilamentSettings\Filament\Pages\Settings as BaseSettings;
 use Spatie\GoogleFonts\Fonts;
 
@@ -31,6 +34,10 @@ class Settings extends BaseSettings
                                 ->label('Community Logo'),
                             FileUpload::make('community.favicon')
                                 ->label('Favicon'),
+                            FileUpload::make('community.payment')
+                                ->label('Payment QR Code'),
+                            Textarea::make('community.donation_text')
+                                ->label('Donation Description'),
                         ]),
                     Tabs\Tab::make('Contact')
                         ->schema([
@@ -161,8 +168,13 @@ class Settings extends BaseSettings
                                 ->label('Secondary Color'),
                             Select::make('theme.font_family')
                                 ->label('Font Family'),
+                            // Select::make('theme.font_family')
+                            // ->allowHtml()
+                            // ->options(
+                            //     FontFamily::cases(),
+                            // ),
                             Select::make('theme.button_styles')
-                                ->label('Button Styles')->options(["button1" => "style1","button2" => "style2","button3" => "style3","button4" => "style4"]),
+                                ->label('Button Styles')->options(["button1" => "style1", "button2" => "style2", "button3" => "style3", "button4" => "style4"]),
                             Select::make('theme.layout_options')
                                 ->label('Header position')
                                 ->options(['sticky-top' => 'Sticky', 'static' => 'Static']),

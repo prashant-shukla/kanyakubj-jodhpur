@@ -20,7 +20,7 @@ class HistoricalPhotoResource extends Resource
 {
     protected static ?string $model = HistoricalPhoto::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-camera';
 
     public static function form(Form $form): Form
     {

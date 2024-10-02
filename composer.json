@@ -8,6 +8,7 @@
         "php": "^8.2",
         "filament/filament": "^3.2",
         "filament/spatie-laravel-google-fonts-plugin": "^3.2",
+        "jaocero/radio-deck": "^1.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
         "outerweb/filament-settings": "^1.2",

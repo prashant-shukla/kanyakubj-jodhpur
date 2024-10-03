@@ -20,7 +20,7 @@ class MemberResource extends Resource
 {
     protected static ?string $model = Member::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user-circle';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
@@ -120,6 +120,20 @@ class MemberResource extends Resource
                             ->label('पूरा नाम / Full Name')
                             ->required(),
 
+                        Forms\Components\Select::make('sdw_of')
+                            ->label(' ')
+                            ->options([
+                                'so' => 'पुत्र / Son of',
+                                'do' => 'पुत्री / Daughter of',
+                                'wo' => 'पति / Wife of',
+                                // Add more relations as needed
+                            ])
+                            ->required(),
+                        
+                        Forms\Components\TextInput::make('sdw_name')
+                            ->label(' ')
+                            ->required(),
+
                         Forms\Components\Select::make('relation')
                             ->label('मुखिया से संबंध / Relation with Head')
                             ->options([
@@ -173,7 +187,7 @@ class MemberResource extends Resource
                         Forms\Components\Textarea::make('other')
                             ->label('अन्य विवरण / Other Details'),
                     ])
-                    ->columns(1) // Single column layout
+                    ->columns(3) // Single column layout
                     ->columnSpan('full') // Use 'full' to make it span across all available columns
                     ->collapsible(), // Makes the repeater collapsible
             ]);
@@ -194,7 +208,7 @@ class MemberResource extends Resource
                     ->label('Profile Image')
                     ->disk('public') // Use the appropriate disk, typically 'public' or 's3'
                     // ->pathPrefix('storage/uploads/profile_images/') // Prefix the path to the image directory
-                    ->size(100) // Set the size of the preview image
+                    ->size(100, 100) // Set the size of the preview image
                     // ->square()
                     ->defaultImageUrl(url('https://placehold.jp/30/dd6699/ffffff/100x100.png?text=NO+IMAGE'))
                     ->extraAttributes(['class' => 'inline-block']), 

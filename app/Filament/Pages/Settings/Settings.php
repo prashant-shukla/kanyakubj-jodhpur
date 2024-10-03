@@ -197,8 +197,10 @@ class Settings extends BaseSettings
                             Select::make('maintenance.mode')
                                 ->label('Maintenance Mode')
                                 ->options(['enabled' => 'Enabled', 'disabled' => 'Disabled']),
-                            TextInput::make('maintenance.custom_message')
-                                ->label('Custom Maintenance Message'),
+                            TextInput::make('maintenance.custom_title')
+                                ->label('Maintenance Title'),
+                            TextArea::make('maintenance.custom_message')
+                                ->label('Maintenance Message'),
                             Select::make('maintenance.automatic_updates')
                                 ->label('Automatic Updates')
                                 ->options(['enabled' => 'Enabled', 'disabled' => 'Disabled']),

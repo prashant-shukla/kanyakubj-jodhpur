@@ -11,9 +11,12 @@ class HomeController extends Controller
 {
     public function index()
     {
+        if(setting('maintenance.mode')=="enabled") {
+            return view('maintenance');
+        }
         // Fetch the slides from the database
         $slides = Slide::all();
-        $quote = Quote::latest()->first();
+        $quote = (Quote::count()) ? Quote::latest()->first() : ['quote'=>'', 'author'=>''];
         $testimonials = Testimonial::all();
         // Pass the slides to the view
         return view('index', compact('slides', 'quote', 'testimonials'));

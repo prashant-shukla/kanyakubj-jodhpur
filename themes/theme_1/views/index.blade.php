@@ -118,9 +118,9 @@
                             <!-- Added heading with icon -->
                             <h4 class="card-title playfair-display-heading mb-4">Quote of the Day</h4>
                             <blockquote class="blockquote mb-4">
-                                <p class="mb-0 text-secondary">"{{$quote->quote}}"</p>
+                                <p class="mb-0 text-secondary">"{{ $quote->quote }}"</p>
                             </blockquote>
-                            <footer class="blockquote-footer text-muted">{{$quote->author}}</footer>
+                            <footer class="blockquote-footer text-muted">{{ $quote->author }}</footer>
                         </div>
                     </div>
                 </div>

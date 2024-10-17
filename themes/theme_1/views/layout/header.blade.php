@@ -44,8 +44,9 @@
     <header class="bg-body-tertiary {{ setting('theme.layout_options') }}" id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light px-2 px-lg-5 shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bolder playfair-display-heading"
-                    href="/">{{ setting('community.name') }}</a>
+                <a class="navbar-brand fw-bolder playfair-display-heading" href="/">
+                    <img src="{{ asset('storage/' . setting('community.logo')) }}" alt="Community Logo" style="height: auto; width: 100px;">
+                </a>                              
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

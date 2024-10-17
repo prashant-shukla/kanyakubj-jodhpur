@@ -96,7 +96,10 @@
     color: var(--primaryColor);
 }
 
-
+.logoimg1 {
+    width: 100%;
+    height: 100%;
+}
 .carousel-inner .carousel-item img {
     min-height: 400px;
     object-fit: cover
@@ -138,9 +141,30 @@
     width: 100%;
     height: auto;
 }
+.homeslider {
+    display: flex;
+}
+.logoimg {
+    width: 50%;
+}
+.logoimg1 {
+    width: 100%;
+    height: 100%;
+}
+.content {
+    padding: 0px 2%;
+    width: 48%;
+}
+.slider .content h1 {
+    color: #FFF;
+    
+}
 
+.auto {
+    margin: 10px auto;
+}
 .about {
-    background-color: var(--subtleColor);
+    background-color: var(--primaryTransparent);
 }
 
 .quote-widget .card {
@@ -401,9 +425,10 @@
 /* about page */
 
 .hero-section {
-    height: 40vh;
+    height: 65vh;
+    width: auto;
     /* Adjust height as needed */
-    background: url('../images/about-banner.jpg') no-repeat center center;
+    background: url('../images/aboutus.png') no-repeat center center;
     background-size: cover;
 }
 
@@ -536,9 +561,30 @@
     padding-left: 180px;
 }
 
+@media only screen and (max-width: 800px) {
+    .homeslider {
+        display: unset;
+    }
+    .logoimg {
+        width: 100%;
+    }
+    .slider .content h1 {
+        color: #FFF;
+        text-align: center;
+    }
+    .content {
+        text-align: center;
+    }
+}
 @media only screen and (max-width: 575px) {
     .single-timeline-area {
         padding-left: 100px;
+    }
+    .homeslider {
+        display: unset;
+    }
+    .logoimg {
+        width: 100%;
     }
 }
 
@@ -800,4 +846,12 @@ input[type="radio"]:focus {
 
 .primary-color {
     color: var(--primaryColor);
+}
+@media only screen and (max-width: 800px) {
+    .content {
+        width: 100%;
+    }
+}
+.slider{
+    background: var(--primaryTransparent);
 }

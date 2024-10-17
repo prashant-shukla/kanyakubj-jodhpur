@@ -6,10 +6,7 @@
               <div class="row d-flex justify-content-between p-4">
                   <div class="col-lg-3 mb-3">
                       <a class="navbar-brand fw-bolder" href="#">Community</a>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dignissimos cum ullam debitis,
-                          reprehenderit quaerat ut suscipit nam deleniti animi totam eveniet cumque iure obcaecati
-                          tempora sunt
-                          deserunt. Repudiandae, molestiae?</p>
+                      <p>हमारा समुदाय हमारी हर गतिविधि का केंद्र है। हम एक समर्थनकारी वातावरण को बढ़ावा देने के लिए समर्पित हैं जहाँ हर कोई फल-फूल सके। हमारे साथ जुड़ें और एक सार्थक कनेक्शन बनाने, ज्ञान साझा करने, और एक-दूसरे को ऊपर उठाने के हमारे मिशन में शामिल हों</p>
                   </div>
                   <div class="col-lg-3 mb-3">
                       <h4 class="heading playfair-display-heading">Important Links</h4>
@@ -30,8 +27,8 @@
                   </div>
                   <div class="col-lg-3 mb-3">
                       <h4 class="heading playfair-display-heading">Contact Us</h4>
-                      <p>Email: support@example.com</p>
-                      <p>Phone: +123456789</p>
+                      <p>Email: Kanyakubjbrahminsamaj5@gmail.com</p>
+                      <p>Phone: 9509119053 , 9828100574 , 9251392192 , 9460273951</p>
                   </div>
               </div>
           </div>

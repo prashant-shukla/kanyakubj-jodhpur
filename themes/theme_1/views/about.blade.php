@@ -7,12 +7,15 @@
 @section("main-section")
 
     <!-- hero section start -->
-  <section class="hero-section ">
-    <div class="hero-section-translucent d-flex align-items-center justify-content-center">
-      <div class="hero-content text-white">
-        <h1>About Us</h1>
+    <section class="hero-section">
+      <div class="hero-section-translucent d-flex flex-column align-items-center justify-content-center">
+          <div class="img text-center">
+              <img src="{{ asset('theme_1/images/0b340f_a659856b4c5c4a6da9c8a9e1620a8ae4~mv2_d_2189_2189_s_2.webp') }}" alt="" class="img-fluid">
+          </div>
+          <div class="text text-center">
+              <h1>श्री कन्याकुब्ज ब्राह्मण समिति जोधपुर</h1>
+          </div>
       </div>
-    </div>
   </section>
   <!-- hero section end -->
 
@@ -20,40 +23,87 @@
   <section>
     <div class="container-fluid py-5">
       <div class="text-center mb-4">
-        <h4 class="heading playfair-display-heading">Our Story</h4>
-        <p class="lead">Every journey has a story, and every story holds a lesson. <br />Discover how our path was
-          shaped by passion, perseverance, and a relentless pursuit of excellence.</p>
+        <h4 class="heading playfair-display-heading">हमारी कहानी</h4>
+        <p class="lead">कान्यकुब्ज ब्राह्मणों की उत्पत्ति</p>
       </div>
-      <div class="row justify-content-center align-items-center">
+      <div class="row justify-content-center align-items-center mt-2">
         <!-- Left Side: Text Content -->
         <div class="col-md-5 mb-4">
           <aside>
-            <h5 class="mb-3" data-aos="fade-right">From Roots to Blossoms: The Birth of Our Community</h5>
-            <p data-aos="fade-right">Our story begins with a shared dream among a handful of families who wanted to
-              create a space where everyone could celebrate their cultural roots while embracing modern life in India.
-              We started as a small group meeting in living rooms, sharing stories, and reliving memories of festivals
-              back home. What began as informal gatherings quickly blossomed into something more significant. We
-              realized the power of unity and the strength of a community that supports one another through life's joys
-              and challenges. Over time, we have grown into a thriving community, committed to preserving our traditions
-              and fostering a sense of belonging for all members.</p>
+            <h5 class="mb-3" data-aos="fade-right">कान्यकुब्ज ब्राह्मणों की उत्पत्ति</h5>
+            <p data-aos="fade-right">
 
-            <h5 class="mb-3 mt-4" data-aos="fade-right">Building Bridges: Uniting Generations</h5>
-            <p data-aos="fade-right">In today’s fast-paced world, it's easy for generational gaps to widen, but our
-              community was built on the belief that understanding between generations is vital. From the outset, we
-              aimed to create a space where elders could pass down their wisdom and youth could share fresh
-              perspectives. Our events and programs are crafted to bring together young and old, bridging the gap with
-              shared stories, cultural practices, and collective learning. Whether it's through cooking classes,
-              storytelling sessions, or tech tutorials taught by the younger members, we are proud to have created a
-              community where every generation learns from the other, enriching our collective experience.</p>
+              <p>  
+                भगवान ब्रह्मा के एक पुत्र थे जिनका नाम कुश था। कुश के चार पुत्र थे जिनके नाम कुशभ, कुशनाभ, अश्रुतराज और वसु थे।
+                 घृतची नाम की अप्सरा से कुशनाभ को एक सौ अत्यंत सुंदर कन्याएँ प्राप्त हुईं। वायु देवता इन गोरी महिलाओं की सुंदरता से बहुत आकर्षित थे और उनसे विवाह करना चाहते थे।
+                  इन कुंवारियों ने वायु देवता से कहा कि वे एक ऋषि की बेटियां हैं और वे केवल उसी व्यक्ति के साथ विवाह करेंगी
+                   जो उनके पिता ने सलाह दी होगी और उन्होंने विनम्रतापूर्वक वायु देवता के साथ विवाह करने के प्रस्ताव को अस्वीकार कर दिया। 
+                   वायु देवता क्रोधित हो गए और उन्होंने कुशनाभ की इन सभी सुंदर कुंवारी बेटियों को कुबड़ी या कुब्जा बनने का श्राप दे दिया। 
+                   कुशनाभ की इन कुंवारी कुबड़ी बेटियों का विवाह चूली ऋषि और सोमदा गंधर्वी के पुत्र, काम्पिल्य के कुलीन राजा ब्रह्मदत्त के साथ हुआ था।
+                    जैसे ही कुशनाभ की इन कुंवारी बेटियों को महान राजा ब्रह्मदत्त ने छुआ, ये सभी कुंवारी लड़कियां भगवान वायु के श्राप से मुक्त हो गईं। वे सामान्य हो गए, 
+                    उनके उभार गायब हो गए और उन्होंने अपनी मूल सुंदरता और आकर्षण पुनः प्राप्त कर लिया।
+              </p>
+              <p>
+                ब्रह्मदत्त का काम्पिल्य राज्य आगे चलकर कान्यकुब्ज के नाम से प्रसिद्ध हुआ (क्योंकि उसने कुशनाभ की कुब्जा पुत्रियों से विवाह किया था)। आजकल इसे कन्नौज के नाम से जाना जाता है। इस भूमि के मूल ब्राह्मण बाद में कान्यकुब्ज ब्राह्मण के नाम से जाने गए।
+              </p>
+             
+            </p>
 
-            <h5 class="mb-3 mt-4" data-aos="fade-right">Empowering Change: A Community for All</h5>
-            <p data-aos="fade-right">Our community stands on the foundation of inclusivity and empowerment. From the
-              very beginning, we recognized the importance of giving everyone a voice, regardless of background,
-              experience, or age. We believe that a truly vibrant community is one that embraces diversity and
-              encourages all its members to contribute. Our journey has been one of continuous learning and growth,
-              driven by a commitment to uplift those around us. Through educational workshops, charity drives, and
-              outreach programs, we have worked tirelessly to ensure that our community is a place where everyone feels
-              welcome, valued, and empowered to make a difference.</p>
+            <h5 class="mb-3 mt-4" data-aos="fade-right">
+              कान्यकुब्ज (कन्नौज) शहर का इतिहास</h5>
+            <p data-aos="fade-right">
+              <p>
+                भारत में ब्राह्मण समुदाय का इतिहास प्रारंभिक हिंदू धर्म के वैदिक धर्म से शुरू होता है, जिसे अब हिंदू अक्सर सनातन धर्म के रूप में संदर्भित करते हैं। ब्राह्मण (ब्राह्मण, ब्राह्मणः) हिंदू धर्म में शिक्षकों, कानून निर्माताओं, विद्वानों और धर्म के प्रचारकों का वर्ग है। ऐसा कहा जाता है कि इसे हिंदू धर्म के चार वर्णों में सर्वोच्च स्थान प्राप्त है।
+                </p>
+              <p>
+                ऐतिहासिक रूप से, ब्राह्मण दार्शनिकों और पुजारियों ने हिंदू जीवन शैली को परिभाषित करने और अर्थ देने में महत्वपूर्ण भूमिका निभाई है, और अन्य धार्मिक विचारों और हठधर्मिता के हमले के खिलाफ समाज के विविध तत्वों को एक साथ रखा है, जो वास्तव में कठिन कार्य है।
+              </p>
+              <p>
+                यह गलत धारणा है कि ब्राह्मण केवल पुजारी होते हैं। केवल ब्राह्मणों का एक उपसमूह पुरोहिती कर्तव्यों में शामिल था। उन्होंने वैदिक युग के बाद से डॉक्टर, लेखक, कवि, भूमि मालिक, मंत्री आदि जैसे कई अन्य पेशे भी अपनाए। भारत के कुछ हिस्सों पर ब्राह्मण राजाओं का भी शासन था।
+              </p>
+            </p>
+
+            <h5 class="mb-3 mt-4" data-aos="fade-right">ब्राह्मणों के गुण |</h5>
+            <p data-aos="fade-right">
+              <br>
+                <span>ब्राह्मण के कर्तव्य एवं संस्कार :</span></br>
+                
+                भगवान ब्रह्मा द्वारा निर्मित सबसे पहले जीवित प्राणी को ब्राह्मण के नाम से जाना जाता था। या ब्राह्मण माता-पिता से उत्पन्न व्यक्ति को ब्राह्मण कहा जाता है और जिसमें सभी सोलह संस्कार होते हैं।
+              </p>
+              <h6>वेदों में परिभाषित ब्राह्मण के ग्यारह गुण हैं: -</h6>
+              <p> क्षमा करने की क्षमता
+                एक और सभी के प्रति दयालुता
+                पवित्रता (बाहरी और आंतरिक) और शुद्ध शाकाहारी
+                सत्य का अनुयायी
+                सभी प्रलोभनों पर नियंत्रण रखें
+                पाप के प्रति घृणा
+                हमेशा ज्ञान की खोज में रहो,
+                दूसरों को शिक्षित करना
+                वेदों का समुचित ज्ञान
+                ध्यान (मनन या चिंतन)
+                आदि ब्रह्म का ज्ञान
+              </p>
+              <p> वेदों और पुराणों में परिभाषित ब्राह्मण को इस ब्रह्मांड के सभी प्राणियों से श्रेष्ठ बताया गया है। श्रीमद्भगवद्गीता में भगवान कृष्ण कहते हैं कि मन पर नियंत्रण, इंद्रियों पर नियंत्रण, कर्तव्य के लिए कष्ट सहना, पवित्रता (आंतरिक और बाहरी दोनों), क्षमा, मन और शरीर की सरलता, ईश्वर, धर्मग्रंथों और दुनिया में विश्वास। पवित्र विद्या का ज्ञान, प्रत्यक्ष अनुभव पर आधारित ईश्वर का ज्ञान ब्राह्मण के स्वाभाविक कर्तव्य हैं। (42वाँ श्लोक, 18वाँ अध्याय)
+              </p>
+              <p>  संध्याएँ ब्रह्मा वृक्ष की जड़ें हैं, चारों वेद शाखाएँ हैं और कर्म उसके पत्ते हैं, इसलिए जड़ों की हमेशा देखभाल करनी चाहिए, अर्थात ब्राह्मण के लिए संध्याएँ आवश्यक हैं। भगवान ब्रह्मा ने ब्राह्मणों के लिए छह आवश्यक कर्तव्य परिभाषित किए हैं; वेद सीखें और दूसरों को इसके लिए प्रेरित करें, स्वयं यज्ञ करें और दूसरों को प्रेरित करें, दान प्राप्त करें और दूसरों को दान दें।
+              </p>
+            
+            </p>
+            <h5 class="mb-3" data-aos="fade-right">भारत में विभिन्न प्रकार के ब्राह्मण </h5>
+            <h6>ब्राह्मणों के प्रकार:</h6>
+            <p data-aos="fade-right">
+
+              <p>  
+                प्रारंभ में, ब्राह्मणों की केवल एक ही श्रेणी थी, बाद में उन्हें उनकी भूमि (क्षेत्रों) के आधार पर गौड़ और द्रविड़ के रूप में वर्गीकृत किया गया। इन दोनों की अपने आप में पाँच उपश्रेणियाँ हैं (पंचगौर और पंचद्रविड़)। बाद में उनमें ब्राह्मणों की 120 श्रेणियां विकसित हो गईं।
+              </p>
+              <p>
+                सारस्वत, कान्यकुब्ज, गौड़, उत्कल और मैथिल, ये पाँच गौड़ हैं और विंध्याचल के उत्तर की ओर निवास करते हैं। पंजाब सारस्वतों की भूमि है। कनौज, अयोध्या, आगरा से लेकर दिल्ली तक कान्यकुब्जों की भूमि है। बिहार और बंगाल मैथिल की भूमि है. गंडकी और कौशिकी नदियों के बीच की भूमि को मैथिल भूमि कहा जाता है। उत्कल विंध्याचल के दूसरी ओर है।
+              </p>
+             <p>पांच द्रविड़ भूमि हैं- कर्नाटक, महाराष्ट्र, तैलंग, द्रविड़ और गुर्जर। </p>
+             <p>कान्यकुब्जों में, मथुरा (माथुर) और मगध (गया के पंडों) को छोड़कर इस क्षेत्र के सभी ब्राह्मण कान्यकुब्ज थे।</p>
+             <p> अयोध्या के भगवान राम ने ब्रह्म-हत्या (ब्राह्मण-रावण* की हत्या, जो जन्म से ब्राह्मण था) से छुटकारा पाने के लिए अश्वमेध यज्ञ का आयोजन किया था। भगवान राम ने आर्यावर्त के सभी ब्राह्मणों (जो उस समय तक केवल कान्यकुब्ज थे) को आमंत्रित किया। अधिकांश ब्राह्मणों ने इस यज्ञ में शामिल होना और ब्रह्म-हत्या में शामिल व्यक्ति से दान स्वीकार करना उचित नहीं समझा। अत: उन्होंने अश्वमेध यज्ञ में भाग नहीं लिया। लेकिन कुछ ब्राह्मण अयोध्या गए और यज्ञ में भाग लिया और उपहार (दान) भी स्वीकार किए। ये ब्राह्मण अंततः सरयू नदी पर स्थित अयोध्या में बस गए और बाद में सरयूपारी ब्राह्मण के रूप में जाने गए।</p>
+            
+            </p>
           </aside>
         </div>
 
@@ -63,18 +113,22 @@
             <!-- Full-width Image -->
             <div class="row mb-3">
               <div class="col-12">
-                <img src="{{asset("theme_1/images/story-1.jpg")}}" class="img-fluid w-100 mb-3 " data-aos="zoom-in"
+                <img src="{{asset("theme_1/images/story-2.1.jpg")}}" class="img-fluid w-100 mb-3 " data-aos="zoom-in"
                   alt="Story Image 1">
               </div>
             </div>
             <!-- Two Half-width Images -->
             <div class="row">
-              <div class="col-12 col-md-6">
-                <img src="{{asset("theme_1/images/story-2.jpg")}}" class="img-fluid w-100 mb-3" data-aos="zoom-in"
+              <div class="col-12 ">
+                <img src="{{asset("theme_1/images/Mission-1.png")}}" class="img-fluid w-100 mb-3" data-aos="zoom-in"
                   alt="Story Image 2">
               </div>
               <div class="col-12 col-md-6">
-                <img src="{{asset("theme_1/images/story-3.jpg")}}" class="img-fluid w-100 mb-3" data-aos="zoom-in"
+                <img src="{{asset("theme_1/images/story-2.2.jpg")}}" class="img-fluid w-100 mb-3" data-aos="zoom-in"
+                  alt="Story Image 3">
+              </div>
+              <div class="col-12 col-md-6">
+                <img src="{{asset("theme_1/images/story2.3.jpg")}}" class="img-fluid w-100 mb-3" data-aos="zoom-in"
                   alt="Story Image 3">
               </div>
             </div>
@@ -89,8 +143,8 @@
   <section id="missionSectionAbout">
     <div class="container py-5">
       <div class="text-center mb-4">
-        <h4 class="heading playfair-display-heading">Our Mission</h4>
-        <p class="lead">Our mission is to unite and empower our community through shared culture, collaboration, and positive impact.</p>
+        <h4 class="heading playfair-display-heading">हमारा मिशन</h4>
+        {{-- <p class="lead">Our mission is to unite and empower our community through shared culture, collaboration, and positive impact.</p> --}}
       </div>
       <div class="row justify-content-center mt-3">
         <!-- Card 1 -->
@@ -105,8 +159,8 @@
             <!-- Large dot at the end of the line -->
             <div class="dot"></div>
             <div class="card-body mt-4">
-              <h5 class="card-title">Mission</h5>
-              <p class="card-text">Our mission is to unite and empower our community through shared culture, collaboration, and positive impact.</p>
+              <h5 class="card-title">मिशन</h5>
+              <p class="card-text">हमारा मिशन साझा संस्कृति, सहयोग, और सकारात्मक प्रभाव के माध्यम से हमारे समुदाय को एकजुट और सशक्त बनाना है।</p>
             </div>
           </div>
         </div>
@@ -123,8 +177,8 @@
             <!-- Large dot at the end of the line -->
             <div class="dot"></div>
             <div class="card-body mt-4">
-              <h5 class="card-title">Vision</h5>
-              <p class="card-text">Our vision is to create a vibrant community where every member is valued and has the opportunity to thrive, fostering innovation and growth.</p>
+              <h5 class="card-title">दृष्टि</h5>
+              <p class="card-text">हमारी दृष्टि एक जीवंत समुदाय बनाने की है, जहाँ प्रत्येक सदस्य को मूल्यवान समझा जाता है और उभरने का अवसर मिलता है, जिससे नवाचार और विकास को बढ़ावा मिलता है।</p>
             </div>
           </div>
         </div>
@@ -141,8 +195,8 @@
             <!-- Large dot at the end of the line -->
             <div class="dot"></div>
             <div class="card-body mt-4">
-              <h5 class="card-title">Core Values</h5>
-              <p class="card-text">We are committed to inclusivity, respect, and mutual support. Our core values guide our interactions and decisions, ensuring a positive and supportive community environment.</p>
+              <h5 class="card-title">मूल मूल्य</h5>
+              <p class="card-text">हम समावेशिता, सम्मान, और आपसी समर्थन के प्रति प्रतिबद्ध हैं। हमारे मूल मूल्य हमारे इंटरैक्शन और निर्णयों को मार्गदर्शित करते हैं, यह सुनिश्चित करते हुए कि हमारा समुदाय सकारात्मक और सहायक वातावरण में विकसित हो।</p>
             </div>
           </div>
         </div>
@@ -155,7 +209,7 @@
   <!-- Leadership History Section -->
   <section class="leadership-section">
     <div class="container">
-      <h4 class="text-center mb-4 heading playfair-display-heading">Leadership History</h4>
+      <h4 class="text-center mb-4 heading playfair-display-heading">नेतृत्व इतिहास</h4>
       <div class="row">
         @foreach ($leaders as $leader)
         <div class="col-md-4 mb-4" data-aos="fade-right">
@@ -186,8 +240,8 @@
             <div class="col-12 col-sm-8 col-lg-6">
                 <!-- Section Heading -->
                 <div class="text-center mb-4">
-                    <h4 class="heading playfair-display-heading">Community Impact</h4>
-                    <p class="lead">Explore the significant milestones and initiatives that have positively impacted our community.</p>
+                    <h4 class="heading playfair-display-heading">सामुदायिक प्रभाव</h4>
+                    <p class="lead">उन महत्वपूर्ण उपलब्धियों और पहलों के बारे में जानें जिनका हमारे समुदाय पर सकारात्मक प्रभाव पड़ा है।</p>
                 </div>
             </div>
         </div>
@@ -232,8 +286,8 @@
   <section class="photo-collage mb-5">
     <div class="container">
         <div class="text-center mb-4">
-            <h4 class="heading playfair-display-heading">Historical Photo Collage</h4>
-            <p class="lead">A collage of historical photos showcasing important events and milestones.</p>
+            <h4 class="heading playfair-display-heading">ऐतिहासिक फोटो कोलाज</h4>
+            <p class="lead">महत्वपूर्ण घटनाओं और मील के पत्थरों को प्रदर्शित करने वाली ऐतिहासिक तस्वीरों का एक कोलाज।</p>
         </div>
         <div class="row g-3">
             @foreach ( $historical_photos as $historical_photo )

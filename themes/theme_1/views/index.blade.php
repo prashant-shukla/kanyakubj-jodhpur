@@ -90,7 +90,8 @@
     <!-- About Section start -->
     <section class="my-5 py-4 about ">
         <div class="container-fluid px-2 ">
-          <h4 class="text-center heading playfair-display-heading mb-4">Objective</h4>
+          <h4 class="text-center heading playfair-display-heading mb-4">उद्देश्य
+        </h4>
           <h5 class="lead text-center mx-auto">धार्मिक, नैतिक और आध्यात्मिक विकास</h5>
           <div class="row align-items-center  Objective">
             <div class="" data-aos="fade-right">
@@ -130,7 +131,7 @@
                     <div class="card shadow-sm border-0 text-center bg-light">
                         <div class="card-body widget">
                             <!-- Added heading with icon -->
-                            <h4 class="card-title playfair-display-heading mb-4">Quote of the Day</h4>
+                            <h4 class="card-title playfair-display-heading mb-4">आज का विचार</h4>
                             <blockquote class="blockquote mb-4">
                                 <p class="mb-0 text-secondary">"{{ $quote->quote }}"</p>
                             </blockquote>
@@ -146,9 +147,8 @@
     <!-- our mission section start -->
     <section class="my-5 py-4 about">
         <div class="container px-2 px-lg-5">
-            <h4 class="text-center heading playfair-display-heading mb-4">Our Mission</h4>
-            <p class="lead text-center mx-auto">Our mission is to create a sustainable and inclusive future by implementing
-                innovative solutions, empowering communities, and preserving our planet for generations to come.</p>
+            <h4 class="text-center heading playfair-display-heading mb-4">हमारा विशेष कार्य</h4>
+            <p class="lead text-center mx-auto">हमारा मिशन नवीन समाधानों को लागू करके, समुदायों को सशक्त बनाकर, तथा आने वाली पीढ़ियों के लिए हमारे ग्रह को संरक्षित करके एक टिकाऊ और समावेशी भविष्य का निर्माण करना है।</p>
             <div class="row align-items-center mt-5">
                 <!-- Image Column -->
                 <div class="col-lg-6 col-md-6 order-2 order-md-1 mt-4 pt-2 mt-sm-0 opt-sm-0">
@@ -193,10 +193,8 @@
                                 alt="Environment Icon" class="icon-img">
                         </div>
                         <div>
-                            <h5>Save Environment</h5>
-                            <p>We are dedicated to implementing eco-friendly practices that reduce waste, conserve energy,
-                                and protect biodiversity. By fostering sustainability, we aim to preserve the natural world
-                                for future generations.</p>
+                            <h5>पर्यावरण बचाएँ</h5>
+                                <p>हम अपने पूर्वजों की विद्वता का सम्मान करते हुए, पर्यावरण की रक्षा, ऊर्जा संरक्षण, और जैव विविधता को सुरक्षित करने के लिए पर्यावरण-अनुकूल उपायों को लागू करने के लिए प्रतिबद्ध हैं, ताकि आने वाली पीढ़ियों के लिए एक स्थायी और सुरक्षित भविष्य सुनिश्चित किया जा सके।</p>
                         </div>
                     </div>
                     <!-- Mission Point 2 -->
@@ -206,9 +204,8 @@
                                 class="icon-img">
                         </div>
                         <div>
-                            <h5>Empower Communities</h5>
-                            <p>We strive to empower communities by promoting education, providing access to resources, and
-                                supporting initiatives that help people thrive and reach their full potential.</p>
+                            <h5>समुदायों को सशक्त बनाना</h5>
+                            <p>इसके साथ ही, हम समुदायों को सशक्त करने और उन्हें शिक्षा, संसाधनों और पहल का समर्थन प्रदान करने के लिए कार्यरत हैं, ताकि लोग अपने पूर्ण क्षमता तक पहुंच सकें और समृद्ध जीवन जी सकें। नवाचार हमारे मिशन का केंद्र है, हम रचनात्मक समाधान और नई प्रौद्योगिकियों को अपनाकर सभी के लिए एक उज्जवल और अधिक जुड़ा हुआ भविष्य बनाने की दिशा में काम कर रहे हैं।</p>
                         </div>
                     </div>
                     <!-- Mission Point 3 -->
@@ -218,9 +215,9 @@
                                 class="icon-img">
                         </div>
                         <div>
-                            <h5>Foster Innovation</h5>
-                            <p>Innovation is at the heart of our mission. We encourage creative problem-solving and embrace
-                                new technologies to create a brighter, more connected future for all.</p>
+                            <h5>इनोवेशन को बढ़ावा दो</h5>
+                            <p>हमारा मिशन धार्मिक, नैतिक, आध्यात्मिक विकास और पर्यावरण संरक्षण को बढ़ावा देना है। हम कान्यकुब्ज ब्राह्मणों की समृद्ध सांस्कृतिक धरोहर को संरक्षित करने के साथ-साथ वेदिक परंपराओं से जुड़ाव को मजबूत करना चाहते हैं। 
+                                साथ ही, हम दर्शनशास्त्र, खगोल विज्ञान, भाषा विज्ञान और धार्मिक ग्रंथों के अध्ययन को प्रोत्साहित करते हुए, एक ऐसे समुदाय का निर्माण कर रहे हैं जो पारंपरिक ज्ञान और नवाचार को अपनाता है।</p>
                         </div>
                     </div>
                 </div>
@@ -233,7 +230,7 @@
     <!-- Testimonials Section Start -->
     <section class="pb-5">
         <div class="container">
-            <h4 class="text-center mb-4 heading playfair-display-heading">Testimonials</h4>
+            <h4 class="text-center mb-4 heading playfair-display-heading">प्रशंसापत्र</h4>
             <div class="row d-flex testimonial-slider">
 
                 @foreach ($testimonials as $testimonial)
@@ -263,7 +260,7 @@
     <!-- Donate Now Section -->
     <section id="donate-now" class="py-5 text-center">
         <div class="container">
-            <h4 class="heading playfair-display-heading">Support Our Cause</h2>
+            <h4 class="heading playfair-display-heading">हमारे उद्देश्य का समर्थन करें</h2>
                 <p class="mb-4">
                     सहयोग करें 
                     "हमारे प्रिय समुदाय के सदस्यों के रूप में, हम आपको हमारी पवित्र पहलों का समर्थन करने के लिए उदारतापूर्वक योगदान करने के लिए आमंत्रित करते हैं।
@@ -274,7 +271,7 @@
                         आपका समर्थन हमें निरंतर आध्यात्मिक संवर्धन और सांप्रदायिक कल्याण की दिशा में मार्गदर्शन करते हुए प्रकाश की किरण बने।"</p>
 
                 <span class="{{setting('theme.button_styles')}}"><button type="button" class="button button--pan" data-bs-toggle="modal" data-bs-target="#donateModal">
-                    <span>Donate Now</span>
+                    <span>अभी दान करें</span>
                 </button></span>
 
         </div>
@@ -284,7 +281,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="donateModalLabel">Thank You for Your Support!</h5>
+                        <h5 class="modal-title" id="donateModalLabel">आपके समर्थन के लिए धन्यवाद!</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -292,13 +289,13 @@
                         <p>{{ setting('community.donation_text') }}</p>
                         
                         <!-- Bank Details -->
-                        <h6>Bank Details for Donation:</h6>
+                        <h6>दान के लिए बैंक विवरण :</h6>
                         <ul>
-                            <li><strong>Bank Name:</strong> Jodhpur Central District Co-op Bank Ltd</li>
-                            <li><strong>Account Number:</strong> 26001101120007842</li>
-                            <li><strong>IFSC Code:</strong> RSCB0026001</li>
-                            <li><strong>Branch Code:</strong> 26001</li>
-                            <li><strong>Account Holder:</strong> Kanya Kubj Brahman Samaj Jodhpur</li>
+                            <li><strong>बैंक का नाम :</strong> Jodhpur Central District Co-op Bank Ltd</li>
+                            <li><strong>खाता संख्या: </strong> 26001101120007842</li>
+                            <li><strong>आईएफएससी कोड: </strong> RSCB0026001</li>
+                            <li><strong>शाखा कोड:</strong> 26001</li>
+                            <li><strong>खाताधारक:</strong> Kanya Kubj Brahman Samaj Jodhpur</li>
                         </ul>
                     </div>
                     <div class="modal-footer">

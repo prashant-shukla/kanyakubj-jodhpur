@@ -13,9 +13,12 @@
 @section('main-section')
 <!-- Hero section start -->
 <section class="hero-section">
-    <div class="hero-section-translucent d-flex align-items-center justify-content-center">
-        <div class="hero-content text-white">
-            <h1>Tributes</h1>
+    <div class="hero-section-translucent d-flex flex-column align-items-center justify-content-center">
+        <div class="img text-center">
+            <img src="{{ asset('theme_1/images/0b340f_a659856b4c5c4a6da9c8a9e1620a8ae4~mv2_d_2189_2189_s_2.webp') }}" alt="" class="img-fluid">
+        </div>
+        <div class="text text-center">
+            <h1>श्री कन्याकुब्ज ब्राह्मण समिति जोधपुर</h1>
         </div>
     </div>
 </section>
@@ -25,8 +28,9 @@
 <section class="team-boxed">
     <div class="container">
         <div class="text-center py-4" data-aos="zoom-in">
-            <h4 class="heading playfair-display-heading">Tributes</h4>
-            <p class="lead">Every journey has a story, and every story holds a lesson. <br />Discover how our path was shaped by passion, perseverance, and a relentless pursuit of excellence.</p>
+            <h4 class="heading playfair-display-heading">श्रद्धांजलि</h4>
+            <p class="lead">हर यात्रा की एक कहानी होती है और हर कहानी में एक सबक छिपा होता है।</br>
+                जानिए कि कैसे हमारे रास्ते को जुनून, दृढ़ता और उत्कृष्टता की निरंतर खोज ने आकार दिया।</p>
         </div>
 
         <!-- Time Period Filter -->
@@ -89,8 +93,8 @@
 <section id="Tribute_Form">
     <div class="container py-5">
         <div class="text-center mb-4" data-aos="zoom-in">
-            <h4 class="heading playfair-display-heading">Submit Tribute</h4>
-            <p class="lead">Let's honor those who made an impact on our community.</p>
+            <h4 class="heading playfair-display-heading">श्रद्धांजलि प्रस्तुत करें</h4>
+            <p class="lead">आइये हम उन लोगों का सम्मान करें जिन्होंने हमारे समुदाय पर प्रभाव डाला है।</p>
         </div>
 
         <!-- Display success message -->
@@ -107,7 +111,7 @@
                     @csrf
                     <!-- Name -->
                     <div class="mb-3">
-                        <label for="tributeName" class="form-label">Enter Fullname</label>
+                        <label for="tributeName" class="form-label">पूरा नाम दर्ज करें</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="tributeName" name="name" value="{{ old('name') }}" placeholder="Enter the name of the person" required>
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -117,14 +121,14 @@
                     <!-- Date of Birth and Date of Passing -->
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="dob" class="form-label">Date of Birth</label>
+                            <label for="dob" class="form-label">जन्म तिथि</label>
                             <input type="date" class="form-control @error('d_o_b') is-invalid @enderror" id="dob" name="d_o_b" value="{{ old('d_o_b') }}" required>
                             @error('d_o_b')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6">
-                            <label for="dod" class="form-label">Date of Passing</label>
+                            <label for="dod" class="form-label">पारित होने की तिथि</label>
                             <input type="date" class="form-control @error('d_o_d') is-invalid @enderror" id="dod" name="d_o_d" value="{{ old('d_o_d') }}" required>
                             @error('d_o_d')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -134,7 +138,7 @@
 
                     <!-- Image Upload -->
                     <div class="mb-3">
-                        <label for="tributeImage" class="form-label">Image</label>
+                        <label for="tributeImage" class="form-label">छवि</label>
                         <input type="file" class="form-control @error('image') is-invalid @enderror" id="tributeImage" name="image" accept="image/*" required>
                         @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -143,7 +147,7 @@
 
                     <!-- Short Description -->
                     <div class="mb-3">
-                        <label for="tributeDescription" class="form-label">Short Description</label>
+                        <label for="tributeDescription" class="form-label">संक्षिप्त वर्णन</label>
                         <textarea class="form-control @error('description') is-invalid @enderror" id="tributeDescription" name="description" rows="4" placeholder="Enter a short description" required  >{{ old('description') }}</textarea>
                         @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -151,7 +155,7 @@
                     </div>
 
                     <!-- Submit button -->
-                    <span class="{{setting('theme.button_styles')}}"><button type="submit" class="button button_header button--pan"><span>Submit Tribute</span></button></span>
+                    <span class="{{setting('theme.button_styles')}}"><button type="submit" class="button button_header button--pan"><span>श्रद्धांजलि प्रस्तुत करें</span></button></span>
                 </form>      
             </div>
         </div>

@@ -7,20 +7,24 @@
 @section('main-section')
   <!-- hero section start -->
   <section class="hero-section">
-    <div class="hero-section-translucent d-flex align-items-center justify-content-center">
-      <div class="hero-content text-white">
-        <h1>Achievers</h1>
-      </div>
+    <div class="hero-section-translucent d-flex flex-column align-items-center justify-content-center">
+        <div class="img text-center">
+            <img src="{{ asset('theme_1/images/0b340f_a659856b4c5c4a6da9c8a9e1620a8ae4~mv2_d_2189_2189_s_2.webp') }}" alt="" class="img-fluid">
+        </div>
+        <div class="text text-center">
+            <h1>श्री कन्याकुब्ज ब्राह्मण समिति जोधपुर</h1>
+        </div>
     </div>
-  </section>
+</section>
   <!-- hero section end -->
   
   <!-- achievers section start -->
   <section class="team-boxed">
     <div class="container">
       <div class="text-center py-4" data-aos="zoom-in">
-        <h4 class="heading playfair-display-heading">Achievers</h4>
-        <p class="lead">Every journey has a story, and every story holds a lesson.<br />Discover how our path was shaped by passion, perseverance, and a relentless pursuit of excellence.</p>
+        <h4 class="heading playfair-display-heading">एचीवर्स</h4>
+        <p class="lead">हर यात्रा की एक कहानी होती है और हर कहानी में एक सबक छिपा होता है।</br>
+          जानिए कि कैसे हमारा रास्ता जुनून, दृढ़ता और उत्कृष्टता की निरंतर खोज से आकार लेता है।</p>
       </div>
   
       <!-- Time Period Filter -->

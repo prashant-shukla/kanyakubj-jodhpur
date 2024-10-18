@@ -7,10 +7,13 @@
 @section('main-section')
 
     <!-- hero section start -->
-    <section class="hero-section ">
-        <div class="hero-section-translucent d-flex align-items-center justify-content-center">
-            <div class="hero-content text-white">
-                <h1>Events</h1>
+    <section class="hero-section">
+        <div class="hero-section-translucent d-flex flex-column align-items-center justify-content-center">
+            <div class="img text-center">
+                <img src="{{ asset('theme_1/images/0b340f_a659856b4c5c4a6da9c8a9e1620a8ae4~mv2_d_2189_2189_s_2.webp') }}" alt="" class="img-fluid">
+            </div>
+            <div class="text text-center">
+                <h1>श्री कन्याकुब्ज ब्राह्मण समिति जोधपुर</h1>
             </div>
         </div>
     </section>
@@ -23,9 +26,8 @@
                 <div class="col-12 col-sm-8 col-lg-6" data-aos="fade-up">
                     <!-- Section Heading -->
                     <div class="text-center mb-4">
-                        <h4 class="heading playfair-display-heading">Events</h4>
-                        <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, ipsam!
-                            Mollitia consequuntur aliquid illo nam.</p>
+                        <h4 class="heading playfair-display-heading">घटनाक्रम</h4>
+                        <p class="lead">लोरेम इप्सम डोलर सिट, अमेट कंसेक्टेचर एडिपिसिंग एलीट। नेस्कियंट, इप्साम! मोलिटिया कॉन्सेक्वेंटुर एलिक्विड इलो नाम।</p>
                     </div>
                 </div>
             </div>
@@ -35,12 +37,12 @@
                         <li class="nav-item" role="presentation" data-aos="zoom-in">
                             <a class="nav-link active" id="justified-tab-0" data-bs-toggle="tab"
                                 href="#justified-tabpanel-0" role="tab" aria-controls="justified-tabpanel-0"
-                                aria-selected="true"><span class="tabnav">Upcoming Events</span></a>
+                                aria-selected="true"><span class="tabnav"> आगामी कार्यक्रम</span></a>
                         </li>
                         <li class="nav-item" role="presentation" data-aos="zoom-in">
                             <a class="nav-link" id="justified-tab-1" data-bs-toggle="tab" href="#justified-tabpanel-1"
                                 role="tab" aria-controls="justified-tabpanel-1" aria-selected="false"><span
-                                    class="tabnav">Past Events</span></a>
+                                    class="tabnav">अतीत की घटनायें</span></a>
                         </li>
                     </ul>
                     <div class="tab-content pt-5" id="tab-content">
@@ -133,7 +135,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title playfair-display-heading" id="eventRegistrationModalLabel">Event Registration
+                    <h4 class="modal-title playfair-display-heading" id="eventRegistrationModalLabel">अभी पंजीकरण करें
                     </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>

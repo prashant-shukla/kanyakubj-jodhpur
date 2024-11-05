@@ -49,9 +49,9 @@ class CommitteeMemberResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name'),
-                ImageColumn::make('image'),
                 TextColumn::make('position'),
-                TextColumn::make('tenure_id'),
+                TextColumn::make('tenure.title')
+                ->label('Tenure Title'),
             ])
             ->filters([
                 //

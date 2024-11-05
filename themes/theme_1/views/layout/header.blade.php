@@ -54,28 +54,28 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link @stack('home_active')" aria-current="page" href="/">Home</a>
+                            <a class="nav-link @stack('home_active')" aria-current="page" href="/">घर</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('about_active')" href="about">About</a>
+                            <a class="nav-link @stack('about_active')" href="about">के बारे में</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('events_active')" href="events">Events</a>
+                            <a class="nav-link @stack('events_active')" href="events">घटनाक्रम</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('members_active')" href="members">Members</a>
+                            <a class="nav-link @stack('members_active')" href="members">सदस्यों</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('gallery_active')" href="gallery">Gallery</a>
+                            <a class="nav-link @stack('gallery_active')" href="gallery">गैलरी</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('achievers_active')" href="achievers">Achievers</a>
+                            <a class="nav-link @stack('achievers_active')" href="achievers">एचीवर्स</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('tribute_active')" href="tribute">Tribute</a>
+                            <a class="nav-link @stack('tribute_active')" href="tribute">श्रद्धांजलि</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('contact_active')" href="contact">Contact Us</a>
+                            <a class="nav-link @stack('contact_active')" href="contact">हमसे संपर्क करें</a>
                         </li>
                     </ul>
                     <div class="d-flex align-items-center flex-column flex-md-row">

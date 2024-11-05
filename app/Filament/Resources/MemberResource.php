@@ -204,9 +204,10 @@ class MemberResource extends Resource
     {
         return $table
             ->columns([
+
                 ImageColumn::make('avatar')
                     ->label('Profile Image')
-                    ->disk('public') // Use the appropriate disk, typically 'public' or 's3'
+                    // Use the appropriate disk, typically 'public' or 's3'
                     // ->pathPrefix('storage/uploads/profile_images/') // Prefix the path to the image directory
                     ->size(100, 100) // Set the size of the preview image
                     // ->square()

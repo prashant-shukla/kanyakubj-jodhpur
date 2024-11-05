@@ -156,13 +156,21 @@
                 <h4 class="heading playfair-display-heading">हमें यहां खोजें</h4>
                 <p class="lead">नीचे दिए गए मानचित्र पर हमारे कार्यालय का पता लगाएं और हमसे मिलें।</p>
             </div>
+           
             <div class="row">
                 <div class="col-12" data-aos="zoom-in">
-                    
                     <iframe
-                        src="{{ setting('contact.google_maps')}}"
-                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        src="{{ setting('contact.google_maps') }}"
+                        width="100%" 
+                        height="400" 
+                        style="border:0; padding: 0; margin: 0;" 
+                        frameborder="0" 
+                        allowfullscreen 
+                        loading="lazy">
+                    </iframe>
                 </div>
+            </div>
+            
             </div>
         </div>
     </section>

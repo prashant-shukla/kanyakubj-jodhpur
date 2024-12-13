@@ -50,7 +50,7 @@
                 @foreach ($members as $member)
                     <div class="col-md-6 col-lg-3 item" data-aos="zoom-in">
                         <div class="box border border-1 d-flex flex-column justify-content-between">
-                            <img class="img-fluid" src="{{ asset('storage/' . $member->image) }}" alt="Ben Johnson">
+                            <img class="img-fluid" src="{{ asset('storage/' . $member->image) }}" alt="Ben Johnson" style="height: 300px">
                             <div class="text-center">
                                 <h3 class="name mb-2">{{ $member->name }}</h3>
                                 <p class="title mb-3">{{ $member->position }}</p>

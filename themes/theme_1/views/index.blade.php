@@ -67,17 +67,17 @@
             <div class="col-md-6">
                 <div class="card text-center bg-light border-0 shadow">
                     <div class="card-body widget">
-                        <h5 class="card-title mb-4">Sunrise & Sunset</h5>
+                        <h5 class="card-title mb-4">सूर्योदय & सूर्योदय</h5>
                         <div class="d-flex justify-content-around align-items-center mb-4">
                             <div class="sunrise">
                                 <i class="fa-solid fa-sun fa-3x text-warning"></i>
-                                <h6 class="mt-2">Sunrise</h6>
-                                <p id="sunrise-time" class="mb-0">06:00 AM</p>
+                                <h6 class="mt-2">सूर्योदय</h6>
+                                <p id="sunrise-time" class="mb-0">06:00 पूर्वाह्न</p>
                             </div>
                             <div class="sunset">
                                 <i class="fa-solid fa-moon fa-3x text-danger"></i>
-                                <h6 class="mt-2">Sunset</h6>
-                                <p id="sunset-time" class="mb-0">07:00 PM</p>
+                                <h6 class="mt-2">सूर्यास्त</h6>
+                                <p id="sunset-time" class="mb-0">07:00 अपराह्न</p>
                             </div>
                         </div>
                     </div>

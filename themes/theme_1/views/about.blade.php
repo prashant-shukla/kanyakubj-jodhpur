@@ -299,7 +299,7 @@
             @endforeach
         </div>
     </div>
-</section>
+  </section>
 
 
   <!-- Modal for displaying images -->

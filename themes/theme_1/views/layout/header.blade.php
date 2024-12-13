@@ -21,11 +21,8 @@
     <style>
         :root {
             --primaryColor: {{ setting('theme.primary_color') }};
-            /* This color can be used for #FF671F primary buttons, calls to action, and key highlights. */
             --primaryTransparent: {{ setting('theme.primary_color') . '4f' }};
-            /* A bold blue color for secondary buttons or links */
             --secondaryColor: {{ setting('theme.secondary_color') }};
-            /* A golden yellow for #FFD700 highlights and hover effects) */
         }
 
         .VIpgJd-ZVi9od-ORHb-OEVmcd {
@@ -81,10 +78,10 @@
                     <div class="d-flex align-items-center flex-column flex-md-row">
                         <div class="d-flex">
                             <span class="{{setting('theme.button_styles')}}"><button type="button" class="button button--pan" data-bs-toggle="modal" data-bs-target="#donateModal">
-                                <span>Donate</span>
+                                <span>दान करें</span>
                             </button></span>
                             <a href="/register" class="{{setting('theme.button_styles')}}"><button
-                                    class="button button_header button--pan"><span>Register</span></button></a>
+                                    class="button button_header button--pan"><span>रजिस्टर</span></button></a>
                         </div>
                         @if (setting('localization.multi_language'))
                             <div id="google_translate_element" class="ms-2 mt-2 mt-md-0"></div>

@@ -5,30 +5,30 @@
           <div class="container-fluid footer-header">
               <div class="row d-flex justify-content-between p-4">
                   <div class="col-lg-3 mb-3">
-                      <a class="navbar-brand fw-bolder" href="#">Community</a>
+                      <a class="navbar-brand fw-bolder" href="#">समुदाय</a>
                       <p>हमारा समुदाय हमारी हर गतिविधि का केंद्र है। हम एक समर्थनकारी वातावरण को बढ़ावा देने के लिए समर्पित हैं जहाँ हर कोई फल-फूल सके। हमारे साथ जुड़ें और एक सार्थक कनेक्शन बनाने, ज्ञान साझा करने, और एक-दूसरे को ऊपर उठाने के हमारे मिशन में शामिल हों</p>
                   </div>
                   <div class="col-lg-3 mb-3">
-                      <h4 class="heading playfair-display-heading">Important Links</h4>
+                      <h4 class="heading playfair-display-heading">महत्वपूर्ण लिंक</h4>
                       <div class="d-flex">
                           <ul class="list-unstyled me-5">
-                              <li><a href="/">Home</a></li>
-                              <li><a href="/about">About</a></li>
-                              <li><a href="/events">Events</a></li>
-                              <li><a href="/tribute">Tribute</a></li>
+                              <li><a href="/">घर</a></li>
+                              <li><a href="/about">के बारे में</a></li>
+                              <li><a href="/events">घटनाक्रम</a></li>
+                              <li><a href="/tribute">श्रद्धांजलि</a></li>
                           </ul>
                           <ul class="list-unstyled">
-                              <li><a href="/members">Members</a></li>
-                              <li><a href="/gallery">Gallery</a></li>
-                              <li><a href="/achievers">Achievers</a></li>
-                              <li><a href="/contact">Contact us</a></li>
+                              <li><a href="/members">सदस्यों</a></li>
+                              <li><a href="/gallery">गैलरी</a></li>
+                              <li><a href="/achievers">एचीवर्स</a></li>
+                              <li><a href="/contact">हमसे संपर्क करें</a></li>
                           </ul>
                       </div>
                   </div>
                   <div class="col-lg-3 mb-3">
-                      <h4 class="heading playfair-display-heading">Contact Us</h4>
-                      <p>Email: Kanyakubjbrahminsamaj5@gmail.com</p>
-                      <p>Phone: 9509119053 , 9828100574 , 9251392192 , 9460273951</p>
+                      <h4 class="heading playfair-display-heading">हमसे संपर्क करें</h4>
+                      <p>ईमेल: Kanyakubjbrahminsamaj5@gmail.com</p>
+                      <p>फ़ोन: 9509119053 , 9828100574 , 9251392192 , 9460273951</p>
                   </div>
               </div>
           </div>
@@ -83,7 +83,7 @@
       function googleTranslateElementInit() {
           new google.translate.TranslateElement({
               pageLanguage: 'en',
-              includedLanguages: 'en,hi,gu,ta,te,bn,kn,ml,mr,pa,or',
+              includedLanguages: 'en,gu,ta,te,bn,kn,ml,mr,pa,or',
               layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
               autoDisplay: false
           }, 'google_translate_element');

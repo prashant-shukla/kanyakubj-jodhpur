@@ -157,7 +157,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 mt-4 pt-2" data-aos="zoom-in">
                                     <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                        <img src="{{ asset('theme_1/images/mission-1.png') }}" class="img-fluid"
+                                        <img src="{{ asset('theme_1/images/Mission-1.png') }}" class="img-fluid"
                                             alt="Image" />
                                         <div class="img-overlay bg-dark"></div>
                                     </div>
@@ -168,14 +168,14 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12" data-aos="zoom-in">
                                     <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                        <img src="{{ asset('theme_1/images/mission-2.png') }}" class="img-fluid"
+                                        <img src="{{ asset('theme_1/images/Mission-2.png') }}" class="img-fluid"
                                             alt="Image" />
                                         <div class="img-overlay bg-dark"></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 mt-4 pt-2" data-aos="zoom-in">
                                     <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                        <img src="{{ asset('theme_1/images/mission-3.png') }}" class="img-fluid"
+                                        <img src="{{ asset('theme_1/images/Mission-3.png') }}" class="img-fluid"
                                             alt="Image" />
                                         <div class="img-overlay bg-dark"></div>
                                     </div>
@@ -234,7 +234,7 @@
             <div class="row d-flex testimonial-slider">
 
                 @foreach ($testimonials as $testimonial)
-                <div class="col-md-4 ms-2 ms-md-0 me-3 mb-3" data-aos="fade-right">
+                <div class="col-md-4 ms-2 ms-md-0  mb-3" data-aos="fade-right">
                   <div class="card h-100 text-center">
                       <img src="{{ asset('storage/' . $testimonial->image) }}"
                           class="card-img-top rounded-circle mx-auto mt-4" alt="Client Photo"

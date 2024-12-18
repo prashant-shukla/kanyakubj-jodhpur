@@ -33,6 +33,9 @@ class CommitteeMemberResource extends Resource
                 FileUpload::make('image'),
                 TextInput::make('name'),
                 TextInput::make('position'),
+                TextInput::make('number')
+                ->placeholder('Enter position number')
+                ->numeric() ,
                 Select::make('tenure_id')
                 ->label('Tenure')
                 ->options(Tenure::all()->pluck('title', 'id'))
@@ -52,6 +55,7 @@ class CommitteeMemberResource extends Resource
                 TextColumn::make('position'),
                 TextColumn::make('tenure.title')
                 ->label('Tenure Title'),
+                TextColumn::make('number'),
             ])
             ->filters([
                 //

@@ -13,7 +13,7 @@
                 <img src="{{ asset('theme_1/images/0b340f_a659856b4c5c4a6da9c8a9e1620a8ae4~mv2_d_2189_2189_s_2.webp') }}" alt="" class="img-fluid">
             </div>
             <div class="text text-center">
-                <h1>श्री कन्याकुब्ज ब्राह्मण समिति जोधपुर</h1>
+                <h1>कान्यकुब्ज ब्राह्मण समाज (रजि.), जोधपुर (राज.)</h1>
             </div>
         </div>
     </section>

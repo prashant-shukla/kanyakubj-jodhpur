@@ -93,7 +93,7 @@
   
     <!-- About Section start -->
     <section class="my-5 py-4 about ">
-        <div class="container-fluid px-2 ">
+        <div class="container-fluid  ">
           <h4 class="text-center heading playfair-display-heading mb-4">उद्देश्य
         </h4>
           <h5 class="lead text-center mx-auto">धार्मिक, नैतिक और आध्यात्मिक विकास</h5>

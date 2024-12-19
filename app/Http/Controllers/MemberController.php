@@ -20,7 +20,7 @@ class MemberController extends Controller
         $tenureRecord = Tenure::where('title', $tenure)->first();
 
         // If tenure record is found, fetch members by tenure_id, otherwise return an empty collection
-        $members = $tenureRecord ? CommitteeMember::where('tenure_id', $tenureRecord->id)->orderBy('number', 'asc')->get() : collect();
+        $members = $tenureRecord ? CommitteeMember::where('tenure_id', $tenureRecord->id)->orderBy('order_number', 'asc')->get() : collect();
         // Pass tenures and members to the view
         return view('members', compact('tenures', 'members', 'tenure'));
     }

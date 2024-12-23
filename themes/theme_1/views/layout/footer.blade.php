@@ -19,6 +19,7 @@
                           </ul>
                           <ul class="list-unstyled">
                               <li><a href="/members">सदस्यों</a></li>
+                              <li><a href="/members-details">सदस्य विवरण</a></li>
                               <li><a href="/gallery">गैलरी</a></li>
                               <li><a href="/achievers">एचीवर्स</a></li>
                               <li><a href="/contact">हमसे संपर्क करें</a></li>

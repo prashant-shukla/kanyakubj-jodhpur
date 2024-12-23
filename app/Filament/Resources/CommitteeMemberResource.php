@@ -28,24 +28,36 @@ class CommitteeMemberResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                FileUpload::make('image'),
-                TextInput::make('name'),
-                TextInput::make('position'),
-                TextInput::make('order_number')
+        return $form->schema([
+            FileUpload::make('image')
+                ->label('Upload Image')
+                ->required(), // Add validation if necessary
+            TextInput::make('name')
+                ->label('Name')
+                ->required(), // Add validation if required
+            TextInput::make('position')
+                ->label('Position')
+                ->required(), // Add validation if required
+            TextInput::make('order_number')
+                ->label('Order Number')
                 ->placeholder('Enter position number')
-                ->numeric() ,
-                Select::make('tenure_id')
+                ->numeric()
+                ->required(), // Add validation if required
+            Select::make('tenure_id')
                 ->label('Tenure')
-                ->options(Tenure::all()->pluck('title', 'id'))
+                ->options(
+                    Tenure::query()
+                        ->orderBy('title')
+                        ->pluck('title', 'id')
+                        ->toArray()
+                )
                 ->required()
-                ->searchable(),
-                TextInput::make("facebook")->label('Facebook link'),
-                TextInput::make("instagram")->label('Instagram link'),
-                TextInput::make("x")->label('X link'),
-            ]);
+                ->searchable()
+                ->placeholder('Select Tenure'), // Add a placeholder for better UX
+        ]);
     }
+    
+    
 
     public static function table(Table $table): Table
     {

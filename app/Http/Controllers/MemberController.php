@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CommitteeMember;
+use App\Models\Member;
 use App\Models\Tenure;
 use Illuminate\Http\Request;
 
@@ -24,5 +25,20 @@ class MemberController extends Controller
         // Pass tenures and members to the view
         return view('members', compact('tenures', 'members', 'tenure'));
     }
-
+    public function members_detail($id)
+    {
+       
+        $member = CommitteeMember::find($id);
+      
+        return view('member_detail', compact('member'));
+    }
+    
+    
+    public function members()
+    {
+       
+        $members = Member::all();
+     
+        return view('member_details', compact('members'));
+    }
 }

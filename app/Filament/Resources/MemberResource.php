@@ -120,19 +120,19 @@ class MemberResource extends Resource
                             ->label('पूरा नाम / Full Name')
                             ->required(),
 
-                        Forms\Components\Select::make('sdw_of')
-                            ->label(' ')
-                            ->options([
-                                'so' => 'पुत्र / Son of',
-                                'do' => 'पुत्री / Daughter of',
-                                'wo' => 'पति / Wife of',
-                                // Add more relations as needed
-                            ])
-                            ->required(),
+                        // Forms\Components\Select::make('sdw_of')
+                        //     ->label(' ')
+                        //     ->options([
+                        //         'so' => 'पुत्र / Son of',
+                        //         'do' => 'पुत्री / Daughter of',
+                        //         'wo' => 'पति / Wife of',
+                        //         // Add more relations as needed
+                        //     ])
+                        //     ->required(),
                         
-                        Forms\Components\TextInput::make('sdw_name')
-                            ->label(' ')
-                            ->required(),
+                        // Forms\Components\TextInput::make('sdw_name')
+                        //     ->label(' ')
+                        //     ->required(),
 
                         Forms\Components\Select::make('relation')
                             ->label('मुखिया से संबंध / Relation with Head')
@@ -142,7 +142,6 @@ class MemberResource extends Resource
                                 'son' => 'पुत्र / Son',
                                 'daughter' => 'पुत्री / Daughter',
                                 'spouse' => 'जीवनसाथी / Spouse',
-
                                 'brother' => 'भाई / Brother',
                                 'sister' => 'बहन / Sister',
                                 'grandson' => 'पोता / Grand Son',
@@ -166,8 +165,8 @@ class MemberResource extends Resource
                             ->required(),
 
                         Forms\Components\DatePicker::make('dob')
-                            ->label('जन्मतिथि / Date of Birth'),
-
+                            ->label('जन्मतिथि / Date of Birth')
+                            ->required(),
                         Forms\Components\TextInput::make('occupation')
                             ->label('व्यवसाय / Occupation'),
 

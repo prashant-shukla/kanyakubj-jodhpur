@@ -18,7 +18,15 @@ class CreateCommitteeMembersTable extends Migration
             $table->string('name');
             $table->integer('order_number');
             $table->string('image')->nullable(); // URL/path of the member's image
-            $table->string('position'); // Position in the committee
+            $table->string('position');
+            $table->date('dob');                        // Date of Birth
+            $table->string('father_name')->nullable();  // Father's Name
+            $table->text('residential_address')->nullable();
+            $table->string('mobile')->unique();          // Mobile Number
+            $table->string('gotra');                    // Gotra
+            $table->string('aspad')->nullable();        // Aspad
+            $table->string('blood_group');  
+            $table->json('other_members')->nullable(); // Position in the committee
             $table->json('social_media_links')->nullable(); // JSON or serialized social media links (optional)
             $table->unsignedBigInteger('tenure_id');
             $table->timestamps(); // Created at and updated at timestamps

@@ -50,32 +50,35 @@
                 @foreach ($members as $member)
                     <div class="col-md-6 col-lg-3 item" data-aos="zoom-in">
                         <div class="box border border-1 d-flex flex-column justify-content-between">
-                            <img class="img-fluid" src="{{ asset('storage/' . $member->image) }}" alt="Ben Johnson" style="height: 300px">
-                            <div class="text-center">
-                                <h3 class="name mb-2">{{ $member->name }}</h3>
-                                <p class="title mb-3">{{ $member->position }}</p>
-                                <p class="title mb-3">{{ $tenure }}</p>
-                                <div class="social">
-                                    @php
-                                        $socialLinks = json_decode($member->social_media_links, true);
-                                    @endphp
-
-                                    @if (!empty($socialLinks['facebook']))
-                                        <a href="{{ $socialLinks['facebook'] }}"><i class="fa-brands fa-facebook"></i></a>
-                                    @endif
-                                    @if (!empty($socialLinks['x']))
-                                        <a href="{{ $socialLinks['x'] }}"><i class="fa-brands fa-x"></i></a>
-                                    @endif
-                                    @if (!empty($socialLinks['instagram']))
-                                        <a href="{{ $socialLinks['instagram'] }}"><i class="fa-brands fa-instagram"></i></a>
-                                    @endif
+                            <!-- Link for each member -->
+                            
+                                <img class="img-fluid" src="{{ asset('storage/' . $member->image) }}" alt="{{ $member->name }}" style="height: 300px">
+                                <div class="text-center">
+                                    <h3 class="name mb-2">{{ $member->name }}</h3>
+                                    <p class="title mb-3">{{ $member->position }}</p>
+                                    <p class="title mb-3">{{ $tenure }}</p>
+                                    <div class="social">
+                                        @php
+                                            $socialLinks = json_decode($member->social_media_links, true);
+                                        @endphp
+            
+                                        @if (!empty($socialLinks['facebook']))
+                                            <a href="{{ $socialLinks['facebook'] }}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                        @endif
+                                        @if (!empty($socialLinks['x']))
+                                            <a href="{{ $socialLinks['x'] }}" target="_blank"><i class="fa-brands fa-x"></i></a>
+                                        @endif
+                                        @if (!empty($socialLinks['instagram']))
+                                            <a href="{{ $socialLinks['instagram'] }}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
+                              <button> <a href="/members-detail/{{ $member->id }}">Detail </a></button> 
                         </div>
                     </div>
                 @endforeach
-
             </div>
+            
 
         </div>
     </section>

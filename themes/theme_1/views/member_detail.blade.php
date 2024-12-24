@@ -7,99 +7,108 @@
 
 <section>
     <div class="container">
-        <h2>Mamber Detail</h2>
+        <h2>Member Detail</h2>
         <div class="row people">
-            {{-- @foreach ($member as $member)
-            dd() --}}
-                <div class="col-md-6 col-lg-3 item" data-aos="zoom-in">
-                    <div class="box border border-1 d-flex flex-column justify-content-between">
-                        <!-- Link for each member -->
-                 
-                        <img class="img-fluid" 
-                        src="{{ $member->image ? asset('storage/' . $member->image) : asset('images/default.png') }}" 
+            <div class="col-md-12  item profile" data-aos="zoom-in">
+                <div class="box border col-md-12 col-lg-4 m-2 border-1 d-flex flex-column justify-content-between">
+                    <!-- Member Image -->
+                    
+                    <img class="img-fluid"
+                        src="{{ $member->avatar ? asset('storage/' . $member->avatar) : asset('avatar/default.png') }}" 
                         alt="{{ $member->name }}" 
-                        style="height: 300px">
-                   
-                            <div class="text-center">
-                                <h3 class="name mb-2">Name : {{ $member->name }}</h3>
-                                <p class="title mb-3">Position : {{ $member->position }}</p>
-                           
-                                <p class="title mb-3">DOB : {{ $member->dob }}</p>
-                                <p class="title mb-3"> father_name :{{ $member->father_name }}</p>
-                                <p class="title mb-3">residential_address : {{ $member->residential_address }}</p>
-                                <p class="title mb-3">mobile : {{ $member->mobile }}</p>
-                                <p class="title mb-3">aspad : {{ $member->aspad }}</p>
-                                <p class="title mb-3">gotra : {{ $member->gotra }}</p>
-                                <p class="title mb-3">blood_group : {{ $member->blood_group }}</p>
+                        style="height: 300px;  object-fit: cover;">
+                </div>
+                    <!-- Member Details -->
+                    <div class=" col-md-12 col-lg-7">
+                        <div class="card shadow-sm ">
+                            <div class="card-header bg-transparent border-0">
+                              <h3 class="mb-0">General information</h3>
+                            </div>
+                            <div class="card-body pt-0">
+                                <table class="table table-bordered">
+                                  <tr>
+                                      <th width="30%">Name</th>
+                                      <td width="3%">:</td>
+                                      <td>{{ $member->first_name }} {{ $member->last_name }}</td>
+                                  </tr>
+                                  <tr>
+                                      <th width="30%">DOB</th>
+                                      <td width="3%">:</td>
+                                      <td>{{ $member->dob }}</td>
+                                  </tr>
+                                  <tr>
+                                      <th width="30%">Mobile</th>
+                                      <td width="3%">:</td>
+                                      <td>{{ $member->mobile }}</td>
+                                  </tr>
+                                  <tr>
+                                      <th width="30%">Residential Address</th>
+                                      <td width="3%">:</td>
+                                      <td>{{ $member->residential_address }}</td>
+                                  </tr>
+                                  <tr>
+                                      <th width="30%"> Father's Name</th>
+                                      <td width="3%">:</td>
+                                      <td>{{ $member->father_name }}</td>
+                                  </tr>
+                                  <tr>
+                                      <th width="30%">Gotra</th>
+                                      <td width="3%">:</td>
+                                      <td>{{ $member->gotra }}</td>
+                                  </tr>
+                                  <tr>
+                                      <th width="30%">Aspad</th>
+                                      <td width="3%">:</td>
+                                      <td>{{ $member->aspad }}</td>
+                                  </tr>
+                                  <tr>
+                                      <th width="30%">Blood Group</th>
+                                      <td width="3%">:</td>
+                                      <td>{{ $member->blood_group }}</td>
+                                  </tr>
+                                </table>
+                            </div>
 
-                                <div class="other_members">
-                                    @php
-                                        // Check if $member->other_members is a valid JSON string or already an array
-                                        $otherMembers = is_string($member->other_members) ? json_decode($member->other_members, true) : $member->other_members;
-                                     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-
-                                    @endphp
-                                dd( $otherMembers)
-                                    @if (is_array($otherMembers))
-                                        @if (!empty($otherMembers['full_name']))
-                                            <p class="title mb-3">Name: {{ $otherMembers['full_name'] }}</p>
-                                        @endif
-                                        @if (!empty($otherMembers['relation']))
-                                            <p class="title mb-3">Relation: {{ $otherMembers['relation'] }}</p>
-                                        @endif
-                                        @if (!empty($otherMembers['education_qualification']))
-                                            <p class="title mb-3">Education Qualification: {{ $otherMembers['education_qualification'] }}</p>
-                                        @endif
-                                        @if (!empty($otherMembers['maritial_status']))
-                                            <p class="title mb-3">Marital Status: {{ $otherMembers['maritial_status'] }}</p>
-                                        @endif
-                                        @if (!empty($otherMembers['dob']))
-                                            <p class="title mb-3">Date of Birth: {{ $otherMembers['dob'] }}</p>
-                                        @endif
-                                        @if (!empty($otherMembers['occupation']))
-                                            <p class="title mb-3">Occupation: {{ $otherMembers['occupation'] }}</p>
-                                        @endif
-                                        @if (!empty($otherMembers['blood_group']))
-                                            <p class="title mb-3">Blood Group: {{ $otherMembers['blood_group'] }}</p>
-                                        @endif
-                                        @if (!empty($otherMembers['other']))
-                                            <p class="title mb-3">Other: {{ $otherMembers['other'] }}</p>
-                                        @endif
+                        </div>
+                      
+                    
+                    
+                        @php
+                        $otherMembers = is_string($member->other_members) 
+                           ? json_encode($member->other_members) 
+                           : $member->other_members;
+                      @endphp
+                
+                <div class="other_members">
+                    @if (is_array($otherMembers) && count($otherMembers) > 0)
+                        @foreach ($otherMembers as $index => $otherMember)
+                            @foreach ($otherMember as $key => $value)
+                                <p class="title mb-3">
+                                    {{ ucwords(str_replace('_', ' ', $key)) }}: 
+                                    @if (is_string($value))
+                                        {{ $value }}
+                                    @elseif (is_array($value))
+                                        [Array of Values]
+                                    @elseif (is_numeric($value))
+                                        {{ $value }}
                                     @else
-                                        <p class="title mb-3">No additional details available.</p>
+                                        [Non-String Value]
                                     @endif
-                                </div>
-                                
-                                
-                                
-                                <div class="social">
-                                    @php
-                                        // Check if $member->social_media_links is a valid JSON string
-                                        $socialLinks = is_string($member->social_media_links) ? json_decode($member->social_media_links, true) : $member->social_media_links;
-                                    @endphp
-                                
-                                    @if (is_array($socialLinks))
-                                        @if (!empty($socialLinks['facebook']))
-                                            <a href="{{ $socialLinks['facebook'] }}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                                        @endif
-                                        @if (!empty($socialLinks['x']))
-                                            <a href="{{ $socialLinks['x'] }}" target="_blank"><i class="fa-brands fa-x"></i></a>
-                                        @endif
-                                        @if (!empty($socialLinks['instagram']))
-                                            <a href="{{ $socialLinks['instagram'] }}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                                        @endif
-                                    @else
-                                        <p>No social media links available.</p>
-                                    @endif
-                                </div>
-                                
-            {{-- @endforeach --}}
+                                </p>
+                            @endforeach
+                        @endforeach
+                    @else
+                        <p class="title mb-3">No additional details available.</p>
+                    @endif
+                </div>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
-        
-
     </div>
 </section>
+
 
 
 @endsection

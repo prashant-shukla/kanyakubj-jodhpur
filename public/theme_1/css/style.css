@@ -556,6 +556,9 @@
     z-index: 1;
     padding-left: 180px;
 }
+.profile{
+    display: flex;
+}
 
 @media only screen and (max-width: 800px) {
     .homeslider {
@@ -571,6 +574,7 @@
     .content {
         text-align: center;
     }
+
 }
 @media only screen and (max-width: 575px) {
     .single-timeline-area {
@@ -581,6 +585,9 @@
     }
     .logoimg {
         width: 100%;
+    }
+    .profile{
+        display: block;
     }
 }
 

@@ -73,7 +73,7 @@
                                         @endif
                                     </div>
                                 </div>
-                              <button> <a href="/members-detail/{{ $member->id }}">Detail </a></button> 
+                           
                         </div>
                     </div>
                 @endforeach

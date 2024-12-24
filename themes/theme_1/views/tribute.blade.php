@@ -163,22 +163,27 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-      const tributes = @json($tributes);
-
-      document.querySelectorAll('.item[data-bs-toggle="modal"]').forEach(item => {
-          item.addEventListener('click', function () {
-              const tributeId = this.dataset.tribute;
-              const tribute = tributes.find(t => t.id == tributeId);
-
-              if (tribute) {
-                  document.getElementById('tributeName').innerText = tribute.name;
-                  document.getElementById('tributeDates').innerText = `${new Date(tribute.d_o_b).getFullYear()} - ${new Date(tribute.d_o_d).getFullYear()}`;
-                  document.getElementById('tributeInfo').innerText = tribute.description;
-                  document.getElementById('tributeImage').src = `{{ asset('storage') }}/${tribute.image}`;
-              }
-          });
-      });
-  });
+    document.addEventListener('DOMContentLoaded', function () {
+        const tributes = @json($tributes);
+  
+        document.querySelectorAll('.item[data-bs-toggle="modal"]').forEach(item => {
+            item.addEventListener('click', function () {
+                const tributeId = this.dataset.tribute;
+                const tribute = tributes.find(t => t.id == tributeId);
+  
+                if (tribute) {
+                    const d_o_d = new Date(tribute.d_o_d);
+                    const formattedDod = d_o_d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }); // Format as "18 Dec 2024"
+  
+                    document.getElementById('tributeName').innerText = tribute.name;
+                    document.getElementById('tributeDates').innerText = `Date of Death: ${formattedDod}`; // Fix this line
+                    document.getElementById('tributeInfo').innerText = tribute.description;
+                    document.getElementById('tributeImage').src = `{{ asset('storage') }}/${tribute.image}`;
+                }
+            });
+        });
+    });
 </script>
+
+  
 @endsection

@@ -29,7 +29,7 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/members', [MemberController::class, 'index']);
 Route::get('/members-detail/{id}', [MemberController::class, 'members_detail']);
-Route::get('/members-details', [MemberController::class, 'members']);
+Route::get('/members-details', [MemberController::class, 'members_details']);
 Route::get('/gallery',[GalleryController::class,'index']);
 Route::get('/achievers', [AchieverController::class,'index']);
 Route::get('/tribute', [TributeController::class,'index']);

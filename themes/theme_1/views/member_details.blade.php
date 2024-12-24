@@ -33,6 +33,12 @@
                     <td>{{ $member->last_name }}</td>
                     <td>{{ $member->mobile }}</td>
                     <td>{{ $member->gotra }}</td>
+                    <td>
+                        <a href="/members-detail/{{ $member->id }}" class="btn btn-primary">
+                            Detail
+                        </a>
+                    </td>
+                   
                 </tr>
                 @endforeach
             </tbody>

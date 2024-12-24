@@ -28,13 +28,12 @@ class MemberController extends Controller
     public function members_detail($id)
     {
        
-        $member = CommitteeMember::find($id);
+        $member = Member::find($id);
       
         return view('member_detail', compact('member'));
     }
-    
-    
-    public function members()
+      
+    public function members_details()
     {
        
         $members = Member::all();

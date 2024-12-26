@@ -73,7 +73,7 @@
         <div class="text-center">
             <hr /><br />
             <h1 class="text-6xl font-extrabold text-white bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent py-4 tracking-wide uppercase shadow-lg">
-                कान्यकुब्ज ब्राह्मण समाज, जोधपुर 
+                कान्यकुब्ज ब्राह्मण समाज (रजि.), जोधपुर (राज.)
             </h1>
             <hr />
         </div>

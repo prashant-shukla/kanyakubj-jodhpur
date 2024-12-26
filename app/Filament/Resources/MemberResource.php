@@ -9,9 +9,11 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Text;
 use Illuminate\Validation\Rule;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Markdown;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Filament\Tables\Columns\ImageColumn;
 
@@ -62,6 +64,8 @@ class MemberResource extends Resource
                 Forms\Components\Textarea::make('office_address')
                     ->label('कार्यालय पता / Office Address')
                     ->nullable(),
+                Forms\Components\TextInput::make('occupation')
+                    ->label('व्यवसाय / Occupation'),
                 Forms\Components\TextInput::make('resident_phone')
                     ->label('फोन नंबर (निवास) / Resident Phone')
                     ->nullable(),
@@ -116,6 +120,10 @@ class MemberResource extends Resource
                     ->addActionLabel('अधिक सदस्य जोड़ें / Add more members')
                     ->label('सदस्य विवरण / Member Details')
                     ->schema([
+                        Forms\Components\Markdown::make('instruction')
+                        ->label('निर्देश / Instructions')
+                        ->content("**Father's name along with the wife and son's/daughter's name.**"),
+                    
                         Forms\Components\TextInput::make('full_name')
                             ->label('पूरा नाम / Full Name')
                             ->required(),
@@ -127,12 +135,10 @@ class MemberResource extends Resource
                         //         'do' => 'पुत्री / Daughter of',
                         //         'wo' => 'पति / Wife of',
                         //         // Add more relations as needed
-                        //     ])
-                        //     ->required(),
+                        //     ]),
                         
                         // Forms\Components\TextInput::make('sdw_name')
-                        //     ->label(' ')
-                        //     ->required(),
+                        //     ->label(' '),
 
                         Forms\Components\Select::make('relation')
                             ->label('मुखिया से संबंध / Relation with Head')

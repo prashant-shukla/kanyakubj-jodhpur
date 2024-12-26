@@ -72,35 +72,88 @@
                         </div>
                       
                     
-                    
                         @php
                         $otherMembers = is_string($member->other_members) 
-                           ? json_encode($member->other_members) 
+                           ? json_decode($member->other_members, true) 
                            : $member->other_members;
-                      @endphp
-                
-                <div class="other_members">
-                    @if (is_array($otherMembers) && count($otherMembers) > 0)
-                        @foreach ($otherMembers as $index => $otherMember)
-                            @foreach ($otherMember as $key => $value)
-                                <p class="title mb-3">
-                                    {{ ucwords(str_replace('_', ' ', $key)) }}: 
-                                    @if (is_string($value))
-                                        {{ $value }}
-                                    @elseif (is_array($value))
-                                        [Array of Values]
-                                    @elseif (is_numeric($value))
-                                        {{ $value }}
-                                    @else
-                                        [Non-String Value]
-                                    @endif
-                                </p>
-                            @endforeach
-                        @endforeach
-                    @else
-                        <p class="title mb-3">No additional details available.</p>
-                    @endif
-                </div>
+                        
+                        // Function to improve field name formatting (for common cases)
+                        function formatFieldName($fieldName) {
+                            // Replace underscores with spaces, then capitalize each word.
+                            $formatted = ucwords(str_replace('_', ' ', $fieldName));
+                        
+                            // Optional: Add more custom rules for specific fields
+                            $replacements = [
+                                'full_name' => 'Full Name',
+                                'dob' => 'Date of Birth',
+                                'relation' => 'Relation with Head',
+                                'maritial_status' => 'Marital Status',
+                                'education_qualification' => 'Education Qualification',
+                                'blood_group' => 'Blood Group',
+                                'occupation' => 'Occupation',
+                                'other' => 'Other Details',
+                            ];
+                        
+                            // If a replacement exists, use it
+                            if (array_key_exists(strtolower($fieldName), $replacements)) {
+                                return $replacements[strtolower($fieldName)];
+                            }
+                        
+                            return $formatted;
+                        }
+                        
+                        // Function to handle null or missing values
+                        function formatValue($value) {
+                            if ($value === null) {
+                                return 'Not Provided'; // You can change this to whatever makes sense
+                            } elseif (is_string($value)) {
+                                return $value;
+                            } elseif (is_array($value)) {
+                                return '[Array of Values]'; // Or custom handling for arrays
+                            } elseif (is_numeric($value)) {
+                                return $value;
+                            } else {
+                                return '[Non-String Value]'; // Handling other types of values
+                            }
+                        }
+                        
+                        @endphp
+                        
+                        <div class="other_members">
+                            @if (is_array($otherMembers) && count($otherMembers) > 0)
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Field</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($otherMembers as $otherMember)
+                                            @if (isset($otherMember['full_name'])) <!-- Check for Full Name first -->
+                                                <tr>
+                                                    <td>{{ formatFieldName('full_name') }}</td>
+                                                    <td>{{ formatValue($otherMember['full_name']) }}</td>
+                                                </tr>
+                                            @endif
+                        
+                                            <!-- Loop through the rest of the fields -->
+                                            @foreach ($otherMember as $key => $value)
+                                                @if ($key !== 'full_name') <!-- Skip full_name since it's already displayed -->
+                                                    <tr>
+                                                        <td>{{ formatFieldName($key) }}</td>
+                                                        <td>{{ formatValue($value) }}</td>
+                                                    </tr>
+                                                @endif
+                                            @endforeach
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            @else
+                                <p class="title mb-3">No additional details available.</p>
+                            @endif
+                        </div>
+                        
                         
                     </div>
                 </div>

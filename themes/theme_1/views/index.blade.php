@@ -127,7 +127,9 @@
       </section>
     <!-- About Section end -->
 
-    <!-- daily quote section start -->
+   
+    
+    <!-- Daily quote section start -->
     <section class="quote-widget mt-5 mb-5">
         <div class="container-fluid px-2 px-lg-5" data-aos="flip-right">
             <div class="row justify-content-center">
@@ -136,16 +138,21 @@
                         <div class="card-body widget">
                             <!-- Added heading with icon -->
                             <h4 class="card-title playfair-display-heading mb-4">आज का विचार</h4>
+                            <!-- Display the quote, or a fallback if empty -->
                             <blockquote class="blockquote mb-4">
-                                <p class="mb-0 text-secondary">"{{ $quote->quote }}"</p>
+                                <p class="mb-0 text-secondary">"{{ $quote->quote ?: 'No quote available today' }}"</p>
                             </blockquote>
-                            <footer class="blockquote-footer text-muted">{{ $quote->author }}</footer>
+                            <footer class="blockquote-footer text-muted">
+                                {{ $quote->author ?: 'Unknown Author' }}
+                            </footer>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    
     <!-- daily quote section end -->
 
     <!-- our mission section start -->

@@ -17,7 +17,7 @@ class CreateTributesTable extends Migration
             $table->id(); // Primary key: auto-incrementing ID
             $table->string('image')->nullable(); // URL/path of the tribute's image (optional)
             $table->string('name'); // Name of the person being honored
-            $table->date('d_o_b'); // Date of Birth
+            $table->date('d_o_b')->nullable(); // Date of Birth
             $table->date('d_o_d'); // Date of Death (nullable if still living)
             $table->text('description'); // Description of the tribute
             $table->timestamps(); // Created at and updated at timestamps

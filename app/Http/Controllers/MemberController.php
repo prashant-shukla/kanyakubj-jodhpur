@@ -36,7 +36,7 @@ class MemberController extends Controller
     public function members_details()
     {
        
-        $members = Member::all();
+        $members = Member::where('is_active', 1)->get();
      
         return view('member_details', compact('members'));
     }

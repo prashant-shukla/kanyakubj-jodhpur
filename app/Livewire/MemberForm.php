@@ -26,6 +26,7 @@ class MemberForm extends Component implements HasForms
     public $image;
     public $dob;
     public $father_name = '';
+    public $occupation = '';
     public $residential_address = '';
     public $office_address = '';
     public $resident_phone = '';
@@ -88,6 +89,8 @@ class MemberForm extends Component implements HasForms
                             Forms\Components\TextInput::make('father_name')
                                 ->label('पिता का नाम / Father\'s Name')
                                 ->nullable(),
+                            Forms\Components\TextInput::make('occupation')
+                                ->label('व्यवसाय / Occupation'),
                             Forms\Components\Textarea::make('residential_address')
                                 ->label('निवास पता / Residential Address')
                                 ->nullable(),
@@ -253,6 +256,7 @@ class MemberForm extends Component implements HasForms
             'avatar' => 'string',
             'dob' => 'required|date',
             'father_name' => 'string|max:255',
+            'occupation' => 'string|max:255',
             'residential_address' => 'string|max:255',
             'office_address' => 'string|max:255',
             'resident_phone' => 'string|max:20',
@@ -266,8 +270,8 @@ class MemberForm extends Component implements HasForms
             'other_members.*.full_name' => 'required|string|max:255',
             'other_members.*.relation' => 'required|string',
             'other_members.*.maritial_status' => 'required|string',
-            // 'other_members.*.education_qualification' => 'string',
-            // 'other_members.*.dob' => 'string',
+            'other_members.*.education_qualification' => 'string',
+            'other_members.*.dob' => 'string',
             // 'other_members.*.occupation' => 'string',
             // 'other_members.*.blood_group' => 'string',
             // 'other_members.*.other' => 'string',
@@ -285,6 +289,7 @@ class MemberForm extends Component implements HasForms
             'avatar' => $validatedData['avatar'],
             'dob' => $validatedData['dob'],
             'father_name' => $validatedData['father_name'],
+            'occupation' => $validatedData['occupation'],
             'residential_address' => $validatedData['residential_address'],
             'office_address' => $validatedData['office_address'],
             'resident_phone' => $validatedData['resident_phone'],

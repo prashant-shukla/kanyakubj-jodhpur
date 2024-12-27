@@ -11,9 +11,9 @@ use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Text;
 use Illuminate\Validation\Rule;
-
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Markdown;
+use Filament\Forms\Components\Textarea;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Filament\Tables\Columns\ImageColumn;
 
@@ -120,12 +120,14 @@ class MemberResource extends Resource
                     ->addActionLabel('अधिक सदस्य जोड़ें / Add more members')
                     ->label('सदस्य विवरण / Member Details')
                     ->schema([
-                        Forms\Components\Markdown::make('instruction')
-                        ->label('निर्देश / Instructions')
-                        ->content("**Father's name along with the wife and son's/daughter's name.**"),
+                        // Textarea::make('instruction')
+                        // ->label('निर्देश / Instructions')
+                        // ->placeholder("**Father's name along with the wife and son's/daughter's name.**")
+                        // ->default("**Father's name along with the wife and son's/daughter's name.**"),
                     
                         Forms\Components\TextInput::make('full_name')
                             ->label('पूरा नाम / Full Name')
+                            ->placeholder("Father's name along with the wife and son's/daughter's name.")
                             ->required(),
 
                         // Forms\Components\Select::make('sdw_of')
@@ -195,6 +197,9 @@ class MemberResource extends Resource
                     ->columns(3) // Single column layout
                     ->columnSpan('full') // Use 'full' to make it span across all available columns
                     ->collapsible(), // Makes the repeater collapsible
+                    Toggle::make('is_active') // This toggle will control whether the TextInput is active or not
+                      ->label('Activate Status Input')
+                      ->default(false),
             ]);
     }
 

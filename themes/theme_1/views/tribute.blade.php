@@ -50,11 +50,21 @@
             @foreach ($tributes as $tribute)
                 <div class="col-12 col-md-6 col-lg-3 item" data-aos="zoom-in" data-bs-toggle="modal" data-bs-target="#tributeModal" data-tribute="{{ $tribute->id }}">
                     <div class="box border border-1 d-flex flex-column justify-content-between">
-                        <img class="img-fluid" src="{{ asset('storage/' . $tribute->image) }}" alt="{{ $tribute->name }}">
+                        <img class="img-fluid" src="{{ asset('storage/' . $tribute->image) }}" alt="{{ $tribute->name }}" style="height: 300px">
                         <div class="text-center">
+                           
                             <h3 class="name mb-2">{{ $tribute->name }}</h3>
-                            <p class="title mb-3">{{ date('Y', strtotime($tribute->d_o_b)) }} - {{ date('Y', strtotime($tribute->d_o_d)) }}</p>
-                        </div>
+                        
+                                 <p class="title mb-3">
+                                    @if($tribute->d_o_b != '')
+                                        {{ date('Y', strtotime($tribute->d_o_b)) }} - {{ date('Y', strtotime($tribute->d_o_d)) }}
+                                    @else
+                                    {{ date('Y', strtotime($tribute->d_o_d)) }} 
+                                    @endif
+                                </p>
+                                
+                        </div> 
+                        <?php //dd($tributes); ?>
                     </div>
                 </div>
             @endforeach

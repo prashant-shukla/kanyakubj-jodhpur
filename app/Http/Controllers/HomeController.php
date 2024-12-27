@@ -17,8 +17,7 @@ class HomeController extends Controller
         if(setting('maintenance.mode')=="enabled") {
             return view('maintenance');
         }
-       
-        $quote = (Quote::count()) ? Quote::latest()->first() : ['quote'=>'', 'author'=>''];
+        $quote = Quote::where('quote', 'rendam')->get()->first() ?: (object) ['quote' => 'No quote available today', 'author' => 'Unknown Author'];
         $testimonials = Testimonial::all();
         // Pass the slides to the view
         return view('index', compact('quote', 'testimonials'));
@@ -29,3 +28,4 @@ class HomeController extends Controller
         dd($Language);
     }
 }
+//  $quote = (Quote::count()) ? Quote::latest()->first() : ['quote'=>'', 'author'=>''];

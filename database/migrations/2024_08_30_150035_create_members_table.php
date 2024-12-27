@@ -25,10 +25,11 @@ return new class extends Migration
             $table->string('resident_phone')->nullable();     // Resident Phone Number
             $table->string('office_phone')->nullable();       // Office Phone Number
             $table->string('mobile')->unique();          // Mobile Number
+            $table->string('occupation')->nullable();
             $table->string('gotra');                    // Gotra
             $table->string('aspad')->nullable();        // Aspad
             $table->string('blood_group');              // Blood Group
-
+            $table->boolean('is_active')->default(0);
             // JSON field to store other members' details
             $table->json('other_members')->nullable();  // Store all related fields as JSON
 

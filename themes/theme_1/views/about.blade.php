@@ -204,10 +204,7 @@
     </div>
   </section>
 
-  <!-- Mission Statement Section End -->
-
-  <!-- Leadership History Section -->
-  <section class="leadership-section">
+  {{-- <section class="leadership-section">
     <div class="container">
       <h4 class="text-center mb-4 heading playfair-display-heading">नेतृत्व इतिहास</h4>
       <div class="row">
@@ -226,13 +223,9 @@
 
       </div>
     </div>
-  </section>
+  </section> --}}
 
 
-
-  <!-- leadership section end -->
-
-  <!-- community impact section start -->
 
   <section class="timeline_area py-3 my-5">
     <div class="container">
@@ -240,7 +233,7 @@
             <div class="col-12 col-sm-8 col-lg-6">
                 <!-- Section Heading -->
                 <div class="text-center mb-4">
-                    <h4 class="heading playfair-display-heading">सामुदायिक प्रभाव</h4>
+                    <h4 class="heading playfair-display-heading">सामाजिक गतिविधियाँ </h4>
                     <p class="lead">उन महत्वपूर्ण उपलब्धियों और पहलों के बारे में जानें जिनका हमारे समुदाय पर सकारात्मक प्रभाव पड़ा है।</p>
                 </div>
             </div>

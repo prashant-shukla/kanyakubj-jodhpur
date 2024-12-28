@@ -118,5 +118,35 @@
             </div>
         </nav>
     </header>
-
+    <div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="donateModalLabel">आपके समर्थन के लिए धन्यवाद!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ asset('storage/' . setting('community.payment')) }}" class="img-fluid mb-3" alt="Donation Image">
+                    <p>{{ setting('community.donation_text') }}</p>
+                    
+                    <!-- Bank Details -->
+                    <h6>दान के लिए बैंक विवरण :</h6>
+                    <ul>
+                        <li><strong>बैंक का नाम :</strong> Jodhpur Central District Co-op Bank Ltd</li>
+                        <li><strong>खाता संख्या: </strong> 26001101120007842</li>
+                        <li><strong>आईएफएससी कोड: </strong> RSCB0026001</li>
+                        <li><strong>शाखा कोड:</strong> 26001</li>
+                        <li><strong>खाताधारक:</strong> Kanya Kubj Brahman Samaj Jodhpur</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <span class="{{ setting('theme.button_styles') }}">
+                        <button type="button" class="button button_header button--pan" data-bs-dismiss="modal">
+                            <span>Close</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- header section end -->

@@ -67,7 +67,7 @@
                                                     <span><i class="fas fa-map-marker-alt me-2"></i> Venue:
                                                         {{ $event->venue }}</span>
                                                 </div>
-                                                <h5 class="mb-3 text-primary">{{ $event->title }}</h5>
+                                                <h5 class="mb-3 text-primary"><a href="/gallery?event={{ $event->title }}">{{ $event->title }}</a></h5>
                                                 <ul class="list-unstyled mb-3">
                                                     <li><i class="far fa-clock me-2"></i> {{ $event->start_time }} -
                                                         {{ $event->end_time }}</li>
@@ -106,7 +106,7 @@
                                                     <span><i class="fas fa-map-marker-alt me-2"></i> Venue:
                                                         {{ $event->venue }}</span>
                                                 </div>
-                                                <h5 class="mb-3 text-primary">{{ $event->title }}</h5>
+                                                <h5 class="mb-3 text-primary"><a href="/gallery?event={{ $event->title }}">{{ $event->title }}</a></h5>
                                                 <ul class="list-unstyled mb-3">
                                                     <li><i class="far fa-clock me-2"></i> {{ $event->start_time }} -
                                                         {{ $event->end_time }}</li>

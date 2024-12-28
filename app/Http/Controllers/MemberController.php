@@ -29,7 +29,7 @@ class MemberController extends Controller
     {
        
         $member = Member::find($id);
-      
+ 
         return view('member_detail', compact('member'));
     }
       

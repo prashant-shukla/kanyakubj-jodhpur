@@ -42,6 +42,11 @@
                                       <td>{{ $member->mobile }}</td>
                                   </tr>
                                   <tr>
+                                    <th width="30%">Occupation</th>
+                                    <td width="3%">:</td>
+                                    <td>{{ $member->occupation }}</td>
+                                </tr>
+                                  <tr>
                                       <th width="30%">Residential Address</th>
                                       <td width="3%">:</td>
                                       <td>{{ $member->residential_address }}</td>

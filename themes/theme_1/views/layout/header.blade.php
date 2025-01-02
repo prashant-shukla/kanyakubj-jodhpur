@@ -57,16 +57,16 @@
                             <a class="nav-link @stack('about_active')" href="about">के बारे में</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('events_active')" href="events">घटनाक्रम</a>
+                            <a class="nav-link @stack('events_active')" href="events">कार्यक्रम</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('members_active')" href="members">सदस्यों</a>
+                            <a class="nav-link @stack('members_active')" href="members">कार्यकारिणी सदस्य</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @stack('gallery_active')" href="gallery">गैलरी</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @stack('achievers_active')" href="achievers">एचीवर्स</a>
+                            <a class="nav-link @stack('achievers_active')" href="achievers">गौरव पल</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @stack('tribute_active')" href="tribute">श्रद्धांजलि</a>

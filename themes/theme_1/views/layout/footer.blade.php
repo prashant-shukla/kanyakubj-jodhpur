@@ -14,14 +14,14 @@
                           <ul class="list-unstyled me-5">
                               <li><a href="/">घर</a></li>
                               <li><a href="/about">के बारे में</a></li>
-                              <li><a href="/events">घटनाक्रम</a></li>
+                              <li><a href="/events">कार्यक्रम</a></li>
                               <li><a href="/tribute">श्रद्धांजलि</a></li>
                           </ul>
                           <ul class="list-unstyled">
                               <li><a href="/members">सदस्यों</a></li>
                               <li><a href="/members-details">सदस्य विवरण</a></li>
                               <li><a href="/gallery">गैलरी</a></li>
-                              <li><a href="/achievers">एचीवर्स</a></li>
+                              <li><a href="/achievers">गौरव पल</a></li>
                               <li><a href="/contact">हमसे संपर्क करें</a></li>
                           </ul>
                       </div>

@@ -26,9 +26,9 @@
                 <div class="col-12 col-sm-8 col-lg-6" data-aos="fade-up">
                     <!-- Section Heading -->
                     <div class="text-center mb-4">
-                        <h4 class="heading playfair-display-heading">घटनाक्रम</h4>
-                        <p class="lead">लोरेम इप्सम डोलर सिट, अमेट कंसेक्टेचर एडिपिसिंग एलीट। नेस्कियंट, इप्साम! मोलिटिया कॉन्सेक्वेंटुर एलिक्विड इलो नाम।</p>
-                    </div>
+                        <h4 class="heading playfair-display-heading">कार्यक्रम</h4>
+                        <p class="lead">हमारे कार्यक्रम का उद्देश्य आपको अद्वितीय अनुभव प्रदान करना है। जुड़ें और इस अवसर का लाभ उठाएँ।</p>
+                    </div>                    
                 </div>
             </div>
             <div class="row">

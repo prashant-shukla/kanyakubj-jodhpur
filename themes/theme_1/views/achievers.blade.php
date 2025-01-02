@@ -22,9 +22,9 @@
   <section class="team-boxed">
     <div class="container">
       <div class="text-center py-4" data-aos="zoom-in">
-        <h4 class="heading playfair-display-heading">एचीवर्स</h4>
-        <p class="lead">हर यात्रा की एक कहानी होती है और हर कहानी में एक सबक छिपा होता है।</br>
-          जानिए कि कैसे हमारा रास्ता जुनून, दृढ़ता और उत्कृष्टता की निरंतर खोज से आकार लेता है।</p>
+        <h4 class="heading playfair-display-heading">हमें इनपे गर्व है</h4>
+        {{-- <p class="lead">हर यात्रा की एक कहानी होती है और हर कहानी में एक सबक छिपा होता है।</br>
+          जानिए कि कैसे हमारा रास्ता जुनून, दृढ़ता और उत्कृष्टता की निरंतर खोज से आकार लेता है। </p> --}}
       </div>
   
       <!-- Time Period Filter -->

@@ -36,3 +36,7 @@ Route::get('/tribute', [TributeController::class,'index']);
 Route::post('/tribute', [TributeController::class, 'store']);
 Route::get('/contact', [ContactController::class,'index']);
 Route::post('/contact', [ContactController::class, 'store']);
+Route::get('/download', [HomeController::class, 'DocumentCategorys']);
+Route::get('/download/{slug}', [HomeController::class, 'document']);
+Route::get('/documents/{id}/download', [HomeController::class, 'download'])->name('documents.download');
+Route::get('/documents/{id}', [HomeController::class, 'show'])->name('documents.view');

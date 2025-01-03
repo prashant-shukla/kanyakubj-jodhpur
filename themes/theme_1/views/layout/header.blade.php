@@ -63,6 +63,9 @@
                             <a class="nav-link @stack('members_active')" href="members">कार्यकारिणी सदस्य</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link @stack('downloads_active')" href="download">डाउनलोड</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link @stack('gallery_active')" href="gallery">गैलरी</a>
                         </li>
                         <li class="nav-item">

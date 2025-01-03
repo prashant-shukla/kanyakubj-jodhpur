@@ -6,6 +6,7 @@ use App\Filament\Resources\DocumentCategoryResource\Pages;
 use App\Filament\Resources\DocumentCategoryResource\RelationManagers;
 use App\Models\DocumentCategory;
 use Filament\Forms;
+use Filament\Forms\Save;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\FileUpload;
@@ -13,6 +14,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -33,10 +35,9 @@ class DocumentCategoryResource extends Resource
             
             TextInput::make('slug')
                 ->label('Slug')
-                ->required()
-                ->maxLength(255)
-                ->unique(ignoreRecord: true) ,
-            
+                ->disabled() // Make it readonly
+                ->required(),
+                 
             FileUpload::make('thumb')
                 ->label('Thumbnail')
                 ->image()

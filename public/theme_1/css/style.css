@@ -104,6 +104,10 @@
     min-height: 400px;
     object-fit: cover
 }
+a {
+    color: rgb(10 11 11);
+    text-decoration:none;
+}
 
 .card {
     background-color: #FFFFFF;
@@ -560,6 +564,15 @@
     display: flex;
 }
 
+
+/* download */
+.download {
+    background-color: #f7f7f7;
+    padding: 1rem;
+   margin-top: 30px;
+
+}
+
 @media only screen and (max-width: 800px) {
     .homeslider {
         display: unset;
@@ -573,6 +586,9 @@
     }
     .content {
         text-align: center;
+    }
+    .download {
+       margin-top: 20px;
     }
 
 }
@@ -615,6 +631,9 @@
     .single-timeline-area .timeline-date {
         width: 100px;
     }
+    .download {
+        margin-top: 10px;
+     }
 }
 
 .single-timeline-area .timeline-date::after {

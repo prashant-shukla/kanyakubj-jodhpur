@@ -23,11 +23,11 @@
                         <td>
                             <!-- Document icon -->
                             <img src="{{ asset('storage/slide_images/pdf-svgrepo-com.svg') }}" width="40px" 
-                                 alt="PDF document icon" class="icon-img">
+                                 alt="PDF document icon"    class="icon-img">
                             
                             <!-- Download link -->
                             <a href="{{ asset('storage/' . $document->file_path) }}" 
-                               download 
+                                download
                                target="_blank" 
                                style="text-decoration:none; color:rgb(6, 6, 6);">
                                {{ $document->title }}

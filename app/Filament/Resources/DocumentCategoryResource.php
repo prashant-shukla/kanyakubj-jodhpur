@@ -35,8 +35,7 @@ class DocumentCategoryResource extends Resource
             
             TextInput::make('slug')
                 ->label('Slug')
-                ->disabled() // Make it readonly
-                ->required(),
+                ->disabled(),
                  
             FileUpload::make('thumb')
                 ->label('Thumbnail')

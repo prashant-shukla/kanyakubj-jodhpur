@@ -42,17 +42,13 @@ class HomeController extends Controller
         // Fetch documents associated with this category
         $documents = DocumentMedia::where('document_category_id', $dom->id)->get();
     
-        if ($documents->isNotEmpty()) {
-            // Return the documents to the view
+     
             return view('document', compact('documents', 'dom')); // Pass both documents and category
-        } else {
-            // Optionally, handle the case where no documents are found
-            return redirect()->route('documents.index')->with('error', 'No documents found in this category.');
-        }
+        
     }
     
 
-    
+  
     
     public function changeLanguage($Language = 'EN'):string{
         dd($Language);

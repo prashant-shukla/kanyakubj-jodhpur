@@ -10,6 +10,7 @@
         <h3 class="text-center mb-3">{{ $dom->name }}</h3>
         
         <!-- Single table to display all documents -->
+        @if($documents && $documents->count())
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -41,6 +42,11 @@
                 @endforeach
             </tbody>
         </table>
+        @else 
+        <h6 class="text-center text-danger fs-2">No documents found in this category.</h6>
+        @endif
+            
+        
     </div>
 </div>
 @endsection

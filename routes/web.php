@@ -39,5 +39,5 @@ Route::post('/contact', [ContactController::class, 'store']);
 Route::get('/download', [HomeController::class, 'DocumentCategorys']);
 Route::get('/download/{slug}', [HomeController::class, 'document']);
 Route::get('/documents/{id}/download', [HomeController::class, 'download'])->name('documents.download');
-Route::get('/documents/{id}', [HomeController::class, 'show'])->name('documents.index');
+// Route::get('/documents/{id}', [HomeController::class, 'show'])->name('documents.index');
 

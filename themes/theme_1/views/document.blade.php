@@ -23,7 +23,7 @@
                     <tr>
                         <td>
                             <!-- Document icon -->
-                            <img src="{{ asset('storage/slide_images/pdf-svgrepo-com.svg') }}" width="40px" 
+                            <img src="{{ asset('storage/slide_images/pdf-svgrepo-com.svg')}}" width="40px" 
                                  alt="PDF document icon"    class="icon-img">
                             
                             <!-- Download link -->

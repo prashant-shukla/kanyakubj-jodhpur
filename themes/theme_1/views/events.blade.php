@@ -156,7 +156,54 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="{{ route('event.register') }}" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="full_name" class="form-label">Full Name</label>
+                            <input type="text" name="full_name" class="form-control" id="full_name" placeholder="Enter your full name"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mobile" class="form-label">Mobile</label>
+                            <input type="text" class="form-control" id="mobile" name="mobile"
+                                placeholder="Enter your mobile number" required>
+                        </div>
+                       
+                        <div class="mb-3">
+                            <label for="comments" class="form-label">Any comments/message</label>
+                            <textarea class="form-control" id="comments" rows="3" name="comments" placeholder="Enter any comments or message"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Are you attending?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="attending" id="attendingYes" value="yes" checked>
+                                <label class="form-check-label" for="attendingYes">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="attending" id="attendingNo" value="no">
+                                <label class="form-check-label" for="attendingNo">No</label>
+                            </div>
+                        </div>
+                        
+                    
+                        <div class="w-100 d-flex">
+                            <span class="{{ setting('theme.button_styles') }}"><button type="submit"
+                                    class="button button_header button--pan mx-auto"><span>Submit</span></button></span>
+                        </div>
+                    </form>
+                    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+                    {{-- <form>
                         <!-- Full Name Field -->
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Full Name</label>
@@ -201,7 +248,7 @@
                             <span class="{{ setting('theme.button_styles') }}"><button type="submit"
                                     class="button button_header button--pan mx-auto"><span>Submit</span></button></span>
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>

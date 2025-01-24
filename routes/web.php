@@ -9,6 +9,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TributeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventRegistrationController;
 use Qirolab\Theme\Middleware\ThemeMiddleware;
 
 Route::get('/change-language', function () {
@@ -32,7 +33,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 
 // Event page 
-Route::get('/events', [EventController::class, 'index']);
+Route::get('/events', [EventController::class, 'index']) ;
 
 // members page 
 Route::get('/members', [MemberController::class, 'index']);
@@ -60,3 +61,8 @@ Route::get('/documents/{id}/download', [HomeController::class, 'download'])->nam
 // Route::get('/documents/{id}', [HomeController::class, 'show'])->name('documents.index');
 
 
+// event register
+Route::get('/event/register', [EventRegistrationController::class, 'showForm']);
+Route::post('/events', [EventRegistrationController::class, 'storeForm'])->name('event.register');
+
+Route::get('/events', [EventController::class, 'index']) ;
